@@ -23,5 +23,3 @@
             </div>
         </div>
         <hr>
-
-        test dev branch
