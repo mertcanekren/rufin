@@ -77,7 +77,34 @@ hr{
     border-top: 1px solid #EEE;
     border-bottom: 1px solid #FFF;
 }
-
+input[type="text"], input[type="password"], input[type="email"], input[type="number"], input[type="tel"], input[type="url"], textarea {
+    min-height: 34px;
+    padding: 7px 8px;
+    outline: none;
+    color: #333;
+    background-color: #FFF;
+    background-repeat: no-repeat;
+    background-position: right center;
+    border: 1px solid #CCC;
+    border-radius: 3px;
+    box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.075);
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    transition: all 0.15s ease-in;
+    -webkit-transition: all 0.15s ease-in 0;
+    vertical-align: middle;
+    width: 100%;
+}
+input:focus {
+    border-color: #9ecaed;
+    box-shadow: 0 0 10px #9ecaed;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    -webkit-box-shadow: 0px 0px 4px #9ecaed;
+    -moz-box-shadow: 0px 0px 4px #9ecaed;
+    box-shadow: 0px 0px 4px #9ecaed;
+}
 h1,
 h2,
 h3,
@@ -553,12 +580,56 @@ input[type="button"].btn-block {
 .homepage-lead p{
     margin: 0 0 10px;
 }
-
 .homepage-lead .btn{
     font-size: 21px;
     padding: 14px 24px;
 }
+.page-content{
+    width: 100%;
+}
+.login{
+    margin: 50px auto;
+    width: 450px;
+    height: 250px;
+}
+.form{
+    border-radius: 4px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.375);
+}
+.form-area{
+    margin:15px;
+}
+.form-row{
+    height: 50px;
+    margin-bottom: 20px;
+}
+.form-row span{
+    font-weight: bold;
+}
+.form-submit{
+}
 
+.content-header{
+    position: relative;
+    padding: 10px 20px;
+    margin: 0;
+    color: #FFF;
+    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.5);
+    background-color: #6C8393;
+    background-image: -moz-linear-gradient(#5b85a5, #447193);
+    background-image: -webkit-linear-gradient(#5b85a5, #447193);
+    background-image: linear-gradient(#5b85a5, #447193);
+    background-repeat: repeat-x;
+    border: 1px solid #6E8290;
+    border-bottom-color: #6e7173;
+    border-radius: 4px 4px 0 0;
+}
+.content-header span {
+    margin-top: 0;
+    margin-bottom: 0;
+    font-size: 16px;
+    font-weight: bold;
+}
 .alert {
   padding: 8px 35px 8px 14px;
   margin-bottom: 20px;
@@ -624,4 +695,11 @@ input[type="button"].btn-block {
 	font-size: 21px;
 	font-weight: 200;
 	line-height: 30px;
+}
+.clear{
+    clear: both;
+    width: 0;
+}
+.right{
+    float:right;
 }

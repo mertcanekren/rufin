@@ -39,6 +39,7 @@
 */
 
 $route['default_controller'] = "homepage";
+$route['login'] = "user/login";
 $route['404_override'] = '';
 
 
