@@ -1,22 +1,22 @@
 <div class="page-content">
     <div class="login form">
         <div class="content-header">
-            <span>Login</span>
+            <span><?php echo $login; ?></span>
         </div>
-        <form action="login" method="post">
+        <form action="" method="">
         <div class="form-area">
             <div class="form-row">
-                <span>Username</span>
+                <span><?php echo $username; ?></span>
                 <div class="clear"></div>
-                <input type="text" name="username">
+                <input type="text" name="username" placeholder="<?php echo $username; ?>">
             </div>
             <div class="form-row">
-                <span>Password</span>
+                <span><?php echo $password; ?></span>
                 <div class="clear"></div>
-                <input type="password" name="password">
+                <input type="password" name="password" placeholder="<?php echo $password; ?>">
             </div>
             <div class="form-submit right">
-                <input type="submit" class="btn btn-success" value="Submit">
+                <input type="submit" class="btn btn-success" value="<?php echo $login; ?>">
             </div>
         </div>
         </form>

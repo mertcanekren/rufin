@@ -17,7 +17,10 @@ class User extends CI_Controller{
      * User login
      */
     public function login(){
-        $data["pagetitle"] = "login";
+        $data["login"]      = $this->lang->line('login');
+        $data["username"]   = $this->lang->line('username');
+        $data["password"]   = $this->lang->line('password');
+        $data["page_title"] = $this->lang->line('login');
         echo $this->rf_template->View('rufin',$data,array("header"=>"header","footer"=>"footer"),"user/login/login.php");
     }
 

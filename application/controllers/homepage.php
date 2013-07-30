@@ -9,7 +9,7 @@ class Homepage extends CI_Controller{
     /**
      * @since 29.07.2013
      * @author Mertcan EKREN <mertcanekren at windowslive.com>
-     * @template /view/rufin/homepage/homepage.php
+     * @template /views/rufin/homepage/homepage.php
      * Anasayfa
      */
     public function index(){
