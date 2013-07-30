@@ -12,16 +12,13 @@
  * Layout belirlenip.Layouttaki yerlesime gore sayfa render edilebilir.
  */
 class Rf_Template{
+
     private $theme_dir="../";
     private $theme_url="/themes/";
-    private $theme_name="";
-    private $data=array();
+    private $theme_name;
     private $exdata=array();
     private $layout_name;
-    private $layout;
-    private $is_mobile=FALSE;
     private $language="turkish";
-    private $language_file;
 
     function Rf_Template(){
        $this->template = &get_instance();       
@@ -30,7 +27,6 @@ class Rf_Template{
 
     public function set_themedir($theme_dir){
         $this->theme_dir=$theme_dir;
-
     }
 
     public function set_language_file($language_file){
@@ -39,7 +35,6 @@ class Rf_Template{
 
     public function get_themedir(){
         return $this->theme_dir;
-
     }
 
     public function get_themename(){
@@ -147,8 +142,7 @@ class Rf_Template{
     		$this->set_create_data($data);
     	}
     	$this->set_theme($theme);
-		$this->layout_section = $layout;
-		$this->set_layout("layout",$this->layout_section);
+		$this->set_layout("layout",$layout);
 		return $this->RenderView($view,$data);
     }
 }

@@ -6,7 +6,7 @@ class Homepage extends CI_Controller{
     }
     
     public function index(){
-    	$data["asd"] = "ad";
+    	$data["homepagetitle"] = "Homepage Title";
 		echo $this->rf_template->View('rufin',$data,array("header"=>"header","footer"=>"footer"),"homepage/homepage.php");
     }
 
