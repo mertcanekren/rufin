@@ -535,7 +535,8 @@ input[type="button"].btn-block {
     padding: 14px 24px;
 }
 .page-content{
-    width: 100%;
+    width: 1000px;
+    height: auto;
 }
 .login{
     margin: 50px auto;
@@ -657,4 +658,13 @@ input[type="button"].btn-block {
 }
 .fluid{
     margin:40px 0 40px 0;
+}
+.sidebar{
+    float: left;
+    width: 250px;
+}
+.dashboard{
+    float: right;
+    width: 750px;
+    height: 500px;
 }

@@ -1,9 +1,8 @@
-<div class="page-content">
     <div class="login form">
         <div class="content-header">
             <span><?php echo $login; ?></span>
         </div>
-        <form action="" method="">
+        <form action="" method="post">
         <div class="form-area">
             <div class="form-row">
                 <span><?php echo $username; ?></span>
@@ -21,4 +20,3 @@
         </div>
         </form>
     </div>
-</div>

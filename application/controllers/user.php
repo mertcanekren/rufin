@@ -10,7 +10,7 @@ class User extends CI_Controller{
         parent::__construct();
     }
 
-   /**
+    /**
      * @since 29.07.2013
      * @author Mertcan EKREN <mertcanekren at windowslive.com>
      * @template /views/rufin/user/login/login.php

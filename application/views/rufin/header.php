@@ -23,3 +23,4 @@
             </div>
         </div>
         <hr>
+        <div class="page-content">
