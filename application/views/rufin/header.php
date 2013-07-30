@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>rufin</title>
+	<title><?php echo $page_title; ?></title>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 	<meta name="viewport" content="width=device-width" />
 	<link rel="shortcut icon" href="favicon.ico" type="image/x-icon"/>
@@ -14,11 +14,11 @@
         <div class="header">
             <div class="logo">
                 <!-- my localhost url -->
-                <a href="/rufin">rufin</a>
+                <a href="/rufin"><?php echo $this->config->config['site_name']; ?></a>
             </div>
             <div class="menu">
                 <ul>
-                    <li><a href="about">About</a></li>
+                    <li><a href="about"><?php echo lang('header_about'); ?></a></li>
                 </ul>
             </div>
         </div>

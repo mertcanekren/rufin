@@ -1,6 +1,6 @@
         <hr>
         <div class="footer">
-            <p>rufin © 2013 </p>
+            <p><?php echo lang('footer_text'); ?></p>
         </div>
     </div>
 </body>
