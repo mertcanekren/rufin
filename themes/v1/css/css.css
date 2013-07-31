@@ -12,7 +12,7 @@ body{
 }
 a{
     color: #0088cc;
-	text-decoration: none;
+    text-decoration: none;
 }
 a:focus {
   outline: thin dotted #333;
@@ -22,6 +22,7 @@ a:focus {
 a:hover,
 a:active {
   outline: 0;
+    text-decoration: underline;
 }
 button,
 input,
@@ -490,7 +491,7 @@ input[type="button"].btn-block {
 .page{
     width: 1000px;
     margin: 0 auto;
-    position: relative;
+    
 }
 .header{
     height: 40px;
@@ -536,7 +537,8 @@ input[type="button"].btn-block {
 }
 .page-content{
     width: 1000px;
-    height: auto;
+    display: inline-block;
+    min-height: 500px;
 }
 .login{
     margin: 50px auto;
@@ -560,7 +562,7 @@ input[type="button"].btn-block {
 .form-submit{
 }
 .content-header{
-    position: relative;
+    
     padding: 10px 20px;
     margin: 0;
     color: #FFF;
@@ -601,7 +603,7 @@ input[type="button"].btn-block {
   margin: 0;
 }
 .alert .close {
-  position: relative;
+  
   top: -2px;
   right: -21px;
   line-height: 20px;
@@ -666,5 +668,31 @@ input[type="button"].btn-block {
 .dashboard{
     float: right;
     width: 750px;
-    height: 500px;
+    
+}
+.home-main{
+    margin: 0 auto;
+    width: 740px;
+}
+.home-main .home-list:first-child  {
+    padding-top: 0;
+}
+.home-list{
+    padding: 10px 0 0 0;
+    height: 30px;
+    border-bottom: 1px solid #eaeaea;
+}
+.home-list-body{
+    padding-left: 15px;
+}
+.home-list-title{
+    display: inline-block;
+}
+.home-list-time{
+    color: #BBB;
+    display: inline-block;
+}
+
+.footer{
+  display: inline-block;
 }

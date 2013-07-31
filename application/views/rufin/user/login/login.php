@@ -2,7 +2,7 @@
         <div class="content-header">
             <span><?php echo $login; ?></span>
         </div>
-        <form action="" method="post">
+        <form action="home" method="post">
         <div class="form-area">
             <div class="form-row">
                 <span><?php echo $username; ?></span>
