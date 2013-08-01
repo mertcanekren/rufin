@@ -665,10 +665,26 @@ input[type="button"].btn-block {
     float: left;
     width: 250px;
 }
+.sidebar-main{
+    width: 245px;
+    margin: 0 auto;
+}
+
+.sidebar-list{
+    height: 25px;
+    padding: 5px 0 0 0;
+    border-bottom: 1px solid #eaeaea;
+}
+.sidebar-main .sidebar-list:last-child  {
+    border-bottom:none;
+}
+.sidebar-list-body{
+    padding-left: 15px;
+}
+
 .dashboard{
     float: right;
     width: 750px;
-    
 }
 .home-main{
     margin: 0 auto;
@@ -677,6 +693,7 @@ input[type="button"].btn-block {
 .home-main .home-list:first-child  {
     padding-top: 0;
 }
+
 .home-list{
     padding: 10px 0 0 0;
     height: 30px;
@@ -693,6 +710,16 @@ input[type="button"].btn-block {
     display: inline-block;
 }
 
+.box{
+    background: #f8f8f8;
+    border: 1px solid #dfdfdf;
+    border-radius: 3px;
+    box-sizing: border-box;
+}
 .footer{
   display: inline-block;
+}
+
+.footer p{
+    margin-top: 20px;
 }
