@@ -538,7 +538,6 @@ input[type="button"].btn-block {
 .page-content{
     width: 1000px;
     display: inline-block;
-    min-height: 500px;
 }
 .login{
     margin: 50px auto;
@@ -688,6 +687,7 @@ input[type="button"].btn-block {
 .sidebar-list-body{
     padding-left: 15px;
     color: #08C;
+    cursor: pointer;
 }
 .sub-sidebar{
     background: #ededed;
