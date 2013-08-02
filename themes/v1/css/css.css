@@ -669,17 +669,47 @@ input[type="button"].btn-block {
     width: 245px;
     margin: 0 auto;
 }
-
-.sidebar-list{
-    height: 25px;
-    padding: 5px 0 0 0;
-    border-bottom: 1px solid #eaeaea;
-}
-.sidebar-main .sidebar-list:last-child  {
+.sidebar-main:last-child {
     border-bottom:none;
 }
+.sidebar-list{
+    min-height: 25px;
+    padding: 5px 0 0 0;
+    border-bottom: 1px solid #eaeaea;
+    position: relative;
+}
+.sidebar-list-body a{
+    display: block;
+}
+.sidebar-list:hover{
+    background: #f5f5f5;
+}
+
 .sidebar-list-body{
     padding-left: 15px;
+    color: #08C;
+}
+.sub-sidebar{
+    background: #ededed;
+    display: none;
+}
+.sub-sidebar-list{
+    height: 15px;
+    padding: 1px 0 5px 0;
+    border-bottom: 1px solid #dfdfdf;
+}
+.sub-sidebar-list:hover{
+    background: #e8e8e8;
+}
+.sub-sidebar-list:last-child  {
+    border-bottom:none;
+}
+.sub-sidebar-list-body{
+    padding-left: 20px;
+    font-size:12px;
+}
+.sub-sidebar-list-body a{
+    display: block;
 }
 
 .dashboard{

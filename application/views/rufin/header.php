@@ -8,6 +8,7 @@
 	<link rel="icon" href="favicon.ico" type="image/x-icon"/>
 	<link rel="stylesheet" type="text/css" href="themes/v1/css/css.css"/>
 	<script type="text/javascript" src="themes/v1/js/jquery.js"></script>
+    <script type="text/javascript" src="themes/v1/js/javascript.js"></script>
 </head>
 <body>
     <div class="page">
