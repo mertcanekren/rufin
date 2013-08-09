@@ -20,6 +20,5 @@ class Home extends CI_Controller{
         $data["page_title"] = $this->config->config['site_name'];
         echo $this->rf_template->View('rufin',$data,array("header"=>"header","sidebar"=>"home/dashboard/sidebar","footer"=>"footer"),"home/dashboard/dashboard.php");
     }
-
 }
 ?>

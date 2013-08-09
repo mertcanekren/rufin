@@ -23,6 +23,5 @@ class User extends CI_Controller{
         $data["page_title"] = $this->lang->line('login');
         echo $this->rf_template->View('rufin',$data,array("header"=>"header","footer"=>"footer"),"user/login/login.php");
     }
-
 }
 ?>

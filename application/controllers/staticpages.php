@@ -21,7 +21,6 @@ class Staticpages extends CI_Controller{
         $data["page_title"] = $this->lang->line('static_about_title');
         $data["static_about_title"] = $this->lang->line('static_about_title');
         echo $this->rf_template->View('rufin',$data,array("header"=>"header","footer"=>"footer"),"staticpages/about/about.php");
-    }
-
+    } 
 }
 ?>
