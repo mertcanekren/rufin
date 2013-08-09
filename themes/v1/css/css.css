@@ -491,7 +491,6 @@ input[type="button"].btn-block {
 .page{
     width: 1000px;
     margin: 0 auto;
-    
 }
 .header{
     height: 40px;
@@ -581,9 +580,7 @@ input[type="button"].btn-block {
     font-size: 16px;
     font-weight: bold;
 }
-.content-text-header{
-
-}
+.content-text-header{}
 .alert {
   padding: 8px 35px 8px 14px;
   margin-bottom: 20px;
@@ -723,7 +720,6 @@ input[type="button"].btn-block {
 .home-main .home-list:first-child  {
     padding-top: 0;
 }
-
 .home-list{
     padding: 10px 0 0 0;
     height: 30px;
@@ -739,7 +735,6 @@ input[type="button"].btn-block {
     color: #BBB;
     display: inline-block;
 }
-
 .box{
     background: #f8f8f8;
     border: 1px solid #dfdfdf;
@@ -749,7 +744,6 @@ input[type="button"].btn-block {
 .footer{
   display: inline-block;
 }
-
 .footer p{
     margin-top: 20px;
 }
