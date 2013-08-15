@@ -21,6 +21,12 @@ class User extends CI_Controller{
         $data["username"]   = $this->lang->line('username');
         $data["password"]   = $this->lang->line('password');
         $data["page_title"] = $this->lang->line('login');
+        if($this->input->post()){
+        	$this->form_validation->set_rules('username', $data["username"], 'required|valid_email|xss_clean');
+			$this->form_validation->set_rules('password', $data["password"], 'required|xss_clean');
+			if ($this->form_validation->run() == FALSE){
+			}
+        }
         echo $this->rf_template->View('rufin',$data,array("header"=>"header","footer"=>"footer"),"user/login/login.php");
     }
 }

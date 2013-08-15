@@ -106,6 +106,16 @@ input:focus {
     -moz-box-shadow: 0px 0px 4px #9ecaed;
     box-shadow: 0px 0px 4px #9ecaed;
 }
+.border-red{
+	border-color: #EF3E46!important;
+    box-shadow: 0 0 10px #EF3E46!important;
+    -webkit-border-radius: 4px!important;
+    -moz-border-radius: 4px!important;
+    border-radius: 4px!important;
+    -webkit-box-shadow: 0px 0px 4px #EF3E46!important;
+    -moz-box-shadow: 0px 0px 4px #EF3E46!important;
+    box-shadow: 0px 0px 4px #EF3E46!important;
+}
 h1,
 h2,
 h3,
@@ -541,11 +551,21 @@ input[type="button"].btn-block {
 .login{
     margin: 50px auto;
     width: 450px;
-    height: 250px;
+    min-height: 250px;
 }
 .form{
     border-radius: 4px;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.375);
+}
+.form-error-area{
+	background: #EF3E46;
+	border: 1px solid rgba(0, 0, 0, 0.375);
+}
+.form-error-area p{
+	margin: 3px 5px;
+	padding-left: 15px;
+	color: #efefef;
+	border-bottom:1px solid #c0c0c0; 
 }
 .form-area{
     margin:15px;
@@ -558,6 +578,7 @@ input[type="button"].btn-block {
     font-weight: bold;
 }
 .form-submit{
+	margin-bottom: 20px
 }
 .content-header{
     
