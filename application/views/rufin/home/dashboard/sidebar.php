@@ -8,10 +8,10 @@
         </div>
         <div class="sub-sidebar" id="submenu-1">
             <div class="sub-sidebar-list">
-                <div class="sub-sidebar-list-body">Bilgileri düzenle</div>
+                <div class="sub-sidebar-list-body"><a href="">Bilgileri düzenle</a></div>
             </div>
             <div class="sub-sidebar-list">
-                <div class="sub-sidebar-list-body">Şifre değiştir</div>
+                <div class="sub-sidebar-list-body"><a href="">Şifre değiştir</a></div>
             </div>
         </div>
         <div class="sidebar-list">

@@ -703,12 +703,12 @@ input[type="button"].btn-block {
 }
 .sub-sidebar-list-body{
     padding-left: 20px;
-    font-size:12px;
+    font-size:13.5px;
 }
 .sub-sidebar-list-body a{
     display: block;
+    color: #046799;
 }
-
 .dashboard{
     float: right;
     width: 750px;
