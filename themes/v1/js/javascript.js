@@ -1,9 +1,12 @@
 $(function(){
+	NProgress.start();
+
     $('.sidebar-list').click(function(){
         $('#submenu-'+ $(this).attr('sub-menu')).slideToggle();
     });
 
-    $('input[type="text"],input[type="password"]').poshytip({
+	/*
+	 $('input[type="text"],input[type="password"]').poshytip({
 		className: 'tip-twitter',
 		showTimeout: 1,
 		alignTo: 'target',
@@ -13,5 +16,7 @@ $(function(){
 		fade: false,
 		slide: false
 	});
+	*/
 
+	NProgress.done(); 
 });
