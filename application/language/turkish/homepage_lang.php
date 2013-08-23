@@ -2,9 +2,7 @@
 /**
  * @since 30.07.2013
  * @author Mertcan EKREN <mertcanekren at windowslive.com>
- * @template
- * @param
- * @return
+ * @template views/rufin/homepage/homepage.php
  * Anasayfa ile ilgili olan dil tanımlamaları
  */
 
