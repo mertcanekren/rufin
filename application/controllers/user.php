@@ -26,7 +26,7 @@ class User extends CI_Controller{
 			$this->form_validation->set_rules('password', $data["password"], 'required|xss_clean');
 			if($this->form_validation->run() == TRUE){
                 if($this->input->post('username') == "test@test.com"){
-                    redirect('home',true);
+                    redirect('home');
                 }
 			}
         }
