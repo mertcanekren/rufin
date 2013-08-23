@@ -27,7 +27,6 @@ class User extends CI_Controller{
 			if($this->form_validation->run() == TRUE){
                 if($this->input->post('username') == "test@test.com"){
                     redirect('home');
-                    
                 }
 			}
         }
