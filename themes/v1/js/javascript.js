@@ -1,5 +1,5 @@
 $(function(){
-	NProgress.start();
+
 
     $('.sidebar-list').click(function(){
         $('#submenu-'+ $(this).attr('sub-menu')).slideToggle();
@@ -18,5 +18,5 @@ $(function(){
 	});
 	*/
 
-	NProgress.done(); 
+
 });
