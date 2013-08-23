@@ -24,7 +24,10 @@ class User extends CI_Controller{
         if($this->input->post()){
         	$this->form_validation->set_rules('username', $data["username"], 'required|valid_email|xss_clean');
 			$this->form_validation->set_rules('password', $data["password"], 'required|xss_clean');
-			if ($this->form_validation->run() == FALSE){
+			if($this->form_validation->run() == TRUE){
+                if($this->input->post('username') == "test@test.com"){
+                    redirect('home',true);
+                }
 			}
         }
         echo $this->rf_template->View('rufin',$data,array("header"=>"header","footer"=>"footer"),"user/login/login.php");
