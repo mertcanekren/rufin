@@ -14,9 +14,14 @@
 | path to your installation.
 |
 */
-$config['base_url']	= '';
+
 $config['site_name'] = 'rufin';
 
+if(strstr($_SERVER["SERVER_NAME"],'127')){
+    $config['base_url']	= 'http://127.0.0.1:81/rufin/';
+}else{
+    $config['base_url']	= 'http://localhost/rufin/';
+}
 /*
 |--------------------------------------------------------------------------
 | Index File

@@ -734,25 +734,25 @@ input[type="button"].btn-block {
     float: right;
     width: 750px;
 }
-.home-main{
+.main{
     margin: 0 auto;
     width: 740px;
 }
-.home-main .home-list:first-child  {
+.main .news-list:first-child  {
     padding-top: 0;
 }
-.home-list{
+.news-list{
     padding: 10px 0 0 0;
     height: 30px;
     border-bottom: 1px solid #eaeaea;
 }
-.home-list-body{
+.news-list-body{
     padding-left: 15px;
 }
-.home-list-title{
+.news-list-title{
     display: inline-block;
 }
-.home-list-time{
+.news-list-time{
     color: #BBB;
     display: inline-block;
 }

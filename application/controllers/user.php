@@ -32,5 +32,11 @@ class User extends CI_Controller{
         }
         echo $this->rf_template->View('rufin',$data,array("header"=>"header","footer"=>"footer"),"user/login/login.php");
     }
+
+
+    public function edit(){
+        $data["page_title"] = "Bilgileri Düzenle";
+        echo $this->rf_template->View('rufin',$data,array("header"=>"header","sidebar"=>"home/dashboard/sidebar","footer"=>"footer"),"user/account/edit/edit.php");
+    }
 }
 ?>

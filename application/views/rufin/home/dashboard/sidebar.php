@@ -8,7 +8,7 @@
         </div>
         <div class="sub-sidebar" id="submenu-1">
             <div class="sub-sidebar-list">
-                <div class="sub-sidebar-list-body"><a href="">Bilgileri düzenle</a></div>
+                <div class="sub-sidebar-list-body"><a href="account/edit">Bilgileri düzenle</a></div>
             </div>
             <div class="sub-sidebar-list">
                 <div class="sub-sidebar-list-body"><a href="">Şifre değiştir</a></div>
