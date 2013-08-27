@@ -35,7 +35,9 @@ class User extends CI_Controller{
 
 
     public function edit(){
-        $data["page_title"] = "Bilgileri Düzenle";
+        $this->rf_template->set_language_file('user');
+        $data["form_title"] = $this->lang->line('edit_account');
+        $data["page_title"] = $this->lang->line('edit_account');
         echo $this->rf_template->View('rufin',$data,array("header"=>"header","sidebar"=>"home/dashboard/sidebar","footer"=>"footer"),"user/account/edit/edit.php");
     }
 }

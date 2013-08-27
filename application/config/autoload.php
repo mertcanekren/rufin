@@ -64,7 +64,7 @@ $autoload['libraries'] = array('Rf_template',"form_validation");
 |	$autoload['helper'] = array('url', 'file');
 */
 
-$autoload['helper'] = array("url","language","file","form","my_form_helper");
+$autoload['helper'] = array("url","language","file","form","my_form_helper","meta_helper");
 
 
 /*
