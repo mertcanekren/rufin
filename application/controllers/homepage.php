@@ -13,11 +13,8 @@ class Homepage extends CI_Controller{
      * Anasayfa
      */
     public function index(){
-    	$data["homepage_title"] = $this->lang->line('homepage_title');
-    	$data["homepage_description"] = $this->lang->line('homepage_description');
-        $data["login"] = $this->lang->line('login');
-        $data["page_title"] = "Rufin";
-		echo $this->rf_template->View('rufin',$data,array("header"=>"header","footer"=>"footer"),"homepage/homepage.php");
+        $data = $this->rf_template->set_language_data(array('homepage_title','homepage_description','login'));
+        echo $this->rf_template->View('rufin',$data,array("header"=>"header","footer"=>"footer"),"homepage/homepage.php");
     }
 
 }

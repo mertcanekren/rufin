@@ -5,10 +5,10 @@
  * @template /views/rufin/header.php
  * Header view dosyasında olan meta etiketlerini oluşturur.
  */
-if (!function_exists('create_meta_tags')) {
+if (!function_exists('create_meta_tags')){
     function create_meta_tags($title){
         $ci = &get_instance();
-        $data =  '<title>'.$title." | ".$ci->config->config["site_name"].'</title>'."\n\t";
+        $data  = ($title) ? '<title>'.$title." | ".$ci->config->config["site_name"].'</title>'."\n\t"  : '<title>'.$ci->config->config["site_name"].'</title>'."\n\t";
         $data .= '<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />'."\n\t";
         $data .= '<meta name="viewport" content="width=device-width" />'."\n\t";
         $data .= '<base href="'.$ci->config->config['base_url'].'">'."\n\t";

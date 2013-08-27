@@ -29,8 +29,26 @@ class Rf_Template{
         $this->theme_dir=$theme_dir;
     }
 
-    public function set_language_file($language_file){
+    public function set_language_file($language_file,$language_data=null){
     	$this->template->lang->load($language_file,$this->language);
+    }
+
+    /**
+     * @since 27.08.2013
+     * @author Mertcan EKREN <mertcanekren at panoroman.com>
+     * @param array: lang key
+     * @return array
+     * Gönderilen lang değerlerini sayfada görünecek şekilde data ya eşitler
+     */
+        public function set_language_data($language_data){
+        $lang_data = array();
+        foreach($language_data as $key=>$value){
+            $lang_data[$value] = $this->template->lang->line($value);
+            if($key){
+                $lang_data[$key] = $this->template->lang->line($value);
+            }
+        }
+        return $lang_data;
     }
 
     public function get_themedir(){

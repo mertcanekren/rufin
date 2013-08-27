@@ -5,6 +5,9 @@
  * Kullanıcı sayfaları üzerinde olan genel dil tanımlamaları
  */
 
+$lang["name"] = "İsim";
+$lang["surname"] = "Soyisim";
+$lang["email"] = "E-mail";
 $lang["edit_account"] = "Bilgileri Düzenle";
 
 ?>

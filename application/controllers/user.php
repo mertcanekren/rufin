@@ -17,10 +17,7 @@ class User extends CI_Controller{
      * User login
      */
     public function login(){
-        $data["login"]      = $this->lang->line('login');
-        $data["username"]   = $this->lang->line('username');
-        $data["password"]   = $this->lang->line('password');
-        $data["page_title"] = $this->lang->line('login');
+        $data = $this->rf_template->set_language_data(array('login','username','password','page_title' => 'login'));
         if($this->input->post()){
         	$this->form_validation->set_rules('username', $data["username"], 'required|valid_email|xss_clean');
 			$this->form_validation->set_rules('password', $data["password"], 'required|xss_clean');
@@ -41,8 +38,7 @@ class User extends CI_Controller{
      */
     public function edit(){
         $this->rf_template->set_language_file('user');
-        $data["form_title"] = $this->lang->line('edit_account');
-        $data["page_title"] = $this->lang->line('edit_account');
+        $data = $this->rf_template->set_language_data(array('name','surname','email','form_title' => 'edit_account','page_title' => 'edit_account'));
         echo $this->rf_template->View('rufin',$data,array("header"=>"header","sidebar"=>"home/dashboard/sidebar","footer"=>"footer"),"user/account/edit/edit.php");
     }
 }
