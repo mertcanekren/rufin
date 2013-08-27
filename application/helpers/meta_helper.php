@@ -1,14 +1,10 @@
 <?php
 /**
- * @version  2.2
  * @since 27.08.2013
  * @author Mertcan EKREN <mertcanekren at panoroman.com>
  * @template /views/rufin/header.php
- * @param
- * @return
  * Header view dosyasında olan meta etiketlerini oluşturur.
  */
-
 if (!function_exists('create_meta_tags')) {
     function create_meta_tags($title){
         $ci = &get_instance();

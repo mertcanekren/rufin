@@ -33,7 +33,12 @@ class User extends CI_Controller{
         echo $this->rf_template->View('rufin',$data,array("header"=>"header","footer"=>"footer"),"user/login/login.php");
     }
 
-
+    /**
+     * @since 26.08.2013
+     * @author Mertcan EKREN <mertcanekren at panoroman.com>
+     * @template /views/rufin/user/account/edit/edit.php
+     * Kullanıcıların hesap bilgilerini düzenlediği sayfa
+     */
     public function edit(){
         $this->rf_template->set_language_file('user');
         $data["form_title"] = $this->lang->line('edit_account');
