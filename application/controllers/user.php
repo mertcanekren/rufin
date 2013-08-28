@@ -38,7 +38,14 @@ class User extends CI_Controller{
      */
     public function edit(){
         $this->rf_template->set_language_file('user');
-        $data = $this->rf_template->set_language_data(array('name','surname','email','form_title' => 'edit_account','page_title' => 'edit_account'));
+        $data = $this->rf_template->set_language_data(array('name','surname','email','form_title' => 'edit_account','page_title' => 'edit_account','save'));
+        if($this->input->post()){
+            $this->form_validation->set_rules('name', $data["name"], 'required|xss_clean');
+            $this->form_validation->set_rules('surname', $data["surname"], 'required|xss_clean');
+            if($this->form_validation->run() == TRUE){
+
+            }
+        }
         echo $this->rf_template->View('rufin',$data,array("header"=>"header","sidebar"=>"home/dashboard/sidebar","footer"=>"footer"),"user/account/edit/edit.php");
     }
 }

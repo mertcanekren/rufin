@@ -18,15 +18,15 @@
                     <div class="form-row">
                         <span><?php echo $name; ?></span>
                         <div class="clear"></div>
-                        <input type="text" name="username" placeholder="<?php echo $username; ?>" <?php if(form_error('username')){ ?> class="border-red" <?php } ?> <?php input_post_val($this->input->post('username')); ?>>
+                        <input type="text" name="name" placeholder="<?php echo $name; ?>" <?php if(form_error('name')){ ?> class="border-red" <?php } ?> <?php input_post_val($this->input->post('name')); ?>>
                     </div>
                     <div class="form-row">
                         <span><?php echo $surname; ?></span>
                         <div class="clear"></div>
-                        <input type="password" name="password" title="<?php echo $password; ?>"placeholder="<?php echo $password; ?>" <?php if(form_error('password')){ ?> class="border-red" <?php } ?> <?php input_post_val($this->input->post('password')); ?>>
+                        <input type="text" name="surname" title="<?php echo $surname; ?>"placeholder="<?php echo $surname; ?>" <?php if(form_error('surname')){ ?> class="border-red" <?php } ?> <?php input_post_val($this->input->post('surname')); ?>>
                     </div>
                     <div class="form-submit right">
-                        <input type="submit" class="btn btn-success" value="<?php echo $login; ?>">
+                        <input type="submit" class="btn btn-success" value="<?php echo $save; ?>">
                     </div>
                 </div>
             </form>
