@@ -4,11 +4,19 @@ $(function(){
         $('#submenu-'+ $(this).attr('sub-menu')).slideToggle();
     });
 
+    /*
+     * Dashboard da olan yeni ekleme formunu gösterir.
+     *
+    */
     $('.new-diary').click(function(){
     	$('.new-diary-button').hide();
     	$('.new-diary-form').fadeIn();
     });
-
+	
+	/*
+     * Jquery ile gelen formları kapatır.
+     *
+    */
     $('#form-cancel').click(function(){
     	var formid = $(this).attr('rel');
     	$('#'+formid).fadeOut();
