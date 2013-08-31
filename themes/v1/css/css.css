@@ -739,17 +739,26 @@ input[type="button"].btn-block {
     width: 740px;
 }
 .new-diary{
-    height: 50px;
-    cursor:pointer;
+    min-height: 50px;
 }
 .new-diary:hover{
     background: #f5f5f5;
+        cursor:pointer;
 }
 .new-diary-button{
     margin: 13px auto;
     width: 80px;
     font-size: 18px;
     color:#b5b5b5;
+}
+.new-diary-form{
+    background: #f1f1f1!important;
+    min-height: 100px;
+    width: 99%;
+    margin: 5px auto 5px;
+    border: 1px solid red;
+    display: none;
+    cursor:default!important;
 }
 .box{
     background: #f8f8f8;

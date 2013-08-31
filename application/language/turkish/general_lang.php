@@ -12,6 +12,7 @@ $lang["email"] = "Email";
 $lang["name"] = "İsim";
 $lang["surname"] = "Soyisim";
 $lang["save"] = "Kaydet";
+$lang["cancel"] = "Vazgeç";
 $lang['homepage'] = "Anasayfa";
 
 
