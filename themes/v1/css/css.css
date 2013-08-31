@@ -738,23 +738,18 @@ input[type="button"].btn-block {
     margin: 0 auto;
     width: 740px;
 }
-.main .news-list:first-child  {
-    padding-top: 0;
+.new-diary{
+    height: 50px;
+    cursor:pointer;
 }
-.news-list{
-    padding: 10px 0 0 0;
-    height: 30px;
-    border-bottom: 1px solid #eaeaea;
+.new-diary:hover{
+    background: #f5f5f5;
 }
-.news-list-body{
-    padding-left: 15px;
-}
-.news-list-title{
-    display: inline-block;
-}
-.news-list-time{
-    color: #BBB;
-    display: inline-block;
+.new-diary-button{
+    margin: 13px auto;
+    width: 80px;
+    font-size: 18px;
+    color:#b5b5b5;
 }
 .box{
     background: #f8f8f8;

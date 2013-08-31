@@ -43,9 +43,14 @@ class Rf_Template{
         public function set_language_data($language_data){
         $lang_data = array();
         foreach($language_data as $key=>$value){
+
             $lang_data[$value] = $this->template->lang->line($value);
             if($key){
-                $lang_data[$key] = $this->template->lang->line($value);
+                if(!$this->template->lang->line($value)){
+                  $lang_data[$key] = $value;
+                }else{
+                  $lang_data[$key] = $this->template->lang->line($value); 
+                }
             }
         }
         return $lang_data;
