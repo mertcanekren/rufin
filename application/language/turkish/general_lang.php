@@ -22,9 +22,6 @@ $lang['homepage'] = "Anasayfa";
  */
 $lang["header_about"] = "Hakkında";
 
-
-
-
 /*
  * Footer
  * View: /views/rufin/footer.php
