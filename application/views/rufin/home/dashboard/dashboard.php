@@ -4,16 +4,7 @@
             <div class="new-diary-button"><?php echo $new; ?></div>
             <div class="new-diary-form box" id="home-new-diary-form">
                 <div>
-                    <?php
-                    if(validation_errors()){
-                        ?>
-                        <div class="form-error-area">
-                            <?php echo validation_errors(); ?>
-                        </div>
-                    <?php
-                    }
-                    ?>
-                    <form action="" method="post">
+                    <form action="new-diary" method="post">
                         <div class="form-area">
                             <div class="form-row">
                                 <span><?php echo $name; ?></span>
