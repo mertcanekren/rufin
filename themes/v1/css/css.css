@@ -547,6 +547,7 @@ input[type="button"].btn-block {
 .page-content{
     width: 1000px;
     display: inline-block;
+    min-height: 300px;
 }
 .login{
     margin: 50px auto;
@@ -581,7 +582,6 @@ input[type="button"].btn-block {
 	margin-bottom: 20px
 }
 .content-header{
-    
     padding: 10px 20px;
     margin: 0;
     color: #FFF;
@@ -740,10 +740,11 @@ input[type="button"].btn-block {
 }
 .new-diary{
     min-height: 50px;
+    margin-bottom: 5px;
 }
 .new-diary:hover{
     background: #f5f5f5;
-        cursor:pointer;
+    cursor:pointer;
 }
 .new-diary-button{
     margin: 13px auto;
@@ -759,6 +760,37 @@ input[type="button"].btn-block {
     border: 1px solid red;
     display: none;
     cursor:default!important;
+}
+.diary-row{
+    min-height: 45px;
+    border-bottom: 1px solid #EEE;
+    margin-bottom: 3px;
+}
+.diary-row:last-child  {
+    border: none;
+}
+.diary-body{
+    display: inline-block;
+    width: 100%;
+    min-height: 50px;
+}
+.diary-date{
+    width: 70px;
+    float: left;
+    text-align: center;
+    min-height: 50px;
+}
+.diary-date-day{
+    margin-top: 5px;
+    font-size: 23px;
+}
+.diary-date-month{
+    font-size: 15px;
+}
+.diary-content{
+    padding-left: 5px;
+    float: right;
+    width: 660px;
 }
 .box{
     background: #f8f8f8;
