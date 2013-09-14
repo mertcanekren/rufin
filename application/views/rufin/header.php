@@ -11,7 +11,7 @@
             </div>
             <div class="menu">
                 <ul>
-                    <li><a href="about"><?php echo lang('header_about'); ?></a></li>
+                    <li></li>
                 </ul>
             </div>
         </div>

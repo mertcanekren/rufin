@@ -813,7 +813,20 @@ input[type="button"].btn-block {
 }
 .footer{
   display: inline-block;
+  width: 1000px;
 }
 .footer p{
     margin-top: 20px;
+    float: left;
+}
+.footer_links{
+    float: right;
+    font-size: 12px;
+}
+.footer_links ul{
+    list-style-type: none;
+}
+.footer_links ul li{
+    float: left;
+    margin-left: 5px;
 }
