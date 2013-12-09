@@ -1,22 +1,27 @@
 $(function(){
 
-
     $('.sidebar-list').click(function(){
         $('#submenu-'+ $(this).attr('sub-menu')).slideToggle();
     });
 
+    /*
+     * Dashboard da olan yeni ekleme formunu gösterir.
+     *
+    */
+    $('.new-diary').click(function(){
+    	$('.new-diary-button').hide();
+    	$('.new-diary-form').fadeIn();
+    });
+	
 	/*
-	 $('input[type="text"],input[type="password"]').poshytip({
-		className: 'tip-twitter',
-		showTimeout: 1,
-		alignTo: 'target',
-		alignX: 'center',
-		offsetY: 5,
-		allowTipHover: true,
-		fade: false,
-		slide: false
-	});
-	*/
-
-
+     * Jquery ile gelen formları kapatır.
+     *
+    */
+    $('#form-cancel').click(function(){
+    	var formid = $(this).attr('rel');
+    	$('#'+formid).fadeOut();
+    	if(formid == "home-new-diary-form"){
+    		$('.new-diary').fadeOut();
+    	}
+    });
 });

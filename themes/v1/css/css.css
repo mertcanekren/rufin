@@ -5,7 +5,7 @@ html {
 }
 body{
 	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-	font-size: 14px;
+	font-size: 13px;
 	line-height: 20px;
 	color: #333333;
     padding-top: 20px;
@@ -44,7 +44,7 @@ input::-moz-focus-inner {
 }
 button,
 html input[type="button"],
-input[type="reset"],
+input[type="rese3t"],
 input[type="submit"] {
   cursor: pointer;
   -webkit-appearance: button;
@@ -547,6 +547,7 @@ input[type="button"].btn-block {
 .page-content{
     width: 1000px;
     display: inline-block;
+    min-height: 300px;
 }
 .login{
     margin: 50px auto;
@@ -581,7 +582,6 @@ input[type="button"].btn-block {
 	margin-bottom: 20px
 }
 .content-header{
-    
     padding: 10px 20px;
     margin: 0;
     color: #FFF;
@@ -694,12 +694,14 @@ input[type="button"].btn-block {
     padding: 5px 0 0 0;
     border-bottom: 1px solid #eaeaea;
     position: relative;
+    -webkit-transition: padding-left 0.2s;
 }
 .sidebar-list-body a{
     display: block;
 }
 .sidebar-list:hover{
     background: #f5f5f5;
+    padding-left: 3px;
 }
 
 .sidebar-list-body{
@@ -715,9 +717,11 @@ input[type="button"].btn-block {
     height: 15px;
     padding: 1px 0 5px 0;
     border-bottom: 1px solid #dfdfdf;
+    -webkit-transition: padding-left 0.2s;
 }
 .sub-sidebar-list:hover{
     background: #e8e8e8;
+    padding-left: 3px;
 }
 .sub-sidebar-list:last-child  {
     border-bottom:none;
@@ -738,23 +742,69 @@ input[type="button"].btn-block {
     margin: 0 auto;
     width: 740px;
 }
-.main .news-list:first-child  {
-    padding-top: 0;
+.new-diary{
+    min-height: 50px;
+    margin-bottom: 5px;
 }
-.news-list{
-    padding: 10px 0 0 0;
-    height: 30px;
-    border-bottom: 1px solid #eaeaea;
+.new-diary:hover{
+    background: #f5f5f5;
+    cursor:pointer;
 }
-.news-list-body{
-    padding-left: 15px;
+.new-diary-button{
+    margin: 13px auto;
+    width: 80px;
+    font-size: 18px;
+    color:#b5b5b5;
 }
-.news-list-title{
+.new-diary-form{
+    background: #f1f1f1!important;
+    min-height: 100px;
+    width: 99%;
+    margin: 5px auto 5px;
+    border: 1px solid red;
+    display: none;
+    cursor:default!important;
+}
+.diary-row{
+    min-height: 45px;
+    border-bottom: 1px solid #EEE;
+    margin-bottom: 3px;
+    -webkit-transition: background 0.3s;
+    border-radius: 2px;
+}
+.diary-row:hover{
+    background:#f1f1f1;
+    cursor: pointer;
+}
+.diary-row:last-child  {
+    border: none;
+}
+.diary-body{
     display: inline-block;
+    width: 100%;
+    min-height: 50px;
 }
-.news-list-time{
-    color: #BBB;
-    display: inline-block;
+.diary-date{
+    width: 70px;
+    float: left;
+    text-align: center;
+    min-height: 50px;
+}
+.diary-date-day{
+    margin-top: 5px;
+    font-size: 23px;
+}
+.diary-date-month{
+    font-size: 17px;
+}
+.diary-date-year{
+    font-size: 16px;
+}
+.diary-content{
+    padding-left: 5px;
+    float: right;
+    width: 660px;
+    font-size: 13px;
 }
 .box{
     background: #f8f8f8;
@@ -764,7 +814,20 @@ input[type="button"].btn-block {
 }
 .footer{
   display: inline-block;
+  width: 1000px;
 }
 .footer p{
     margin-top: 20px;
+    float: left;
+}
+.footer_links{
+    float: right;
+    font-size: 12px;
+}
+.footer_links ul{
+    list-style-type: none;
+}
+.footer_links ul li{
+    float: left;
+    margin-left: 5px;
 }
