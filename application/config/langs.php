@@ -12,3 +12,7 @@
     'password',
     'page_title' => 'login'
 );
+
+$config["user_edit"] = array(
+    'name','surname','email','form_title' => 'edit_account','page_title' => 'edit_account','save'
+);

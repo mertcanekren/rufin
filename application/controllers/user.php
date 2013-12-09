@@ -22,9 +22,9 @@ class User extends CI_Controller{
         	$this->form_validation->set_rules('username', $data["username"], 'required|valid_email|xss_clean');
 			$this->form_validation->set_rules('password', $data["password"], 'required|xss_clean');
 			if($this->form_validation->run() == TRUE){
-                if($this->input->post('username') == "test@test.com"){
+               // if($this->input->post('username') == "test@test.com"){
                     redirect('home');
-                }
+                //}
 			}
         }
         echo $this->rf_template->View('rufin',$data,array("header"=>"header","footer"=>"footer"),"user/login/login.php");
@@ -38,7 +38,7 @@ class User extends CI_Controller{
      */
     public function edit(){
         $this->rf_template->set_language_file('user');
-        $data = $this->rf_template->set_language_data(array('name','surname','email','form_title' => 'edit_account','page_title' => 'edit_account','save'));
+        $data = $this->rf_template->set_language_data($this->config->config["user_edit"]);
         if($this->input->post()){
             $this->form_validation->set_rules('name', $data["name"], 'required|xss_clean');
             $this->form_validation->set_rules('surname', $data["surname"], 'required|xss_clean');
