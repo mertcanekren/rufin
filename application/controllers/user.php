@@ -17,7 +17,7 @@ class User extends CI_Controller{
      * User login
      */
     public function login(){
-        $data = $this->rf_template->set_language_data(array('login','username','password','page_title' => 'login'));
+        $data = $this->rf_template->set_language_data($this->config->config["login"]);
         if($this->input->post()){
         	$this->form_validation->set_rules('username', $data["username"], 'required|valid_email|xss_clean');
 			$this->form_validation->set_rules('password', $data["password"], 'required|xss_clean');
