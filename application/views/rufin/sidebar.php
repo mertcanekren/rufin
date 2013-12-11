@@ -1,0 +1,21 @@
+<div class="sidebar">
+    <div class="sidebar-main box">
+        <div class="sidebar-list">
+            <div class="sidebar-list-body"><a href="home">Anasayfa</a></div>
+        </div>
+        <div class="sidebar-list" sub-menu="1">
+            <div class="sidebar-list-body">Hesap Bilgileri</div>
+        </div>
+        <div class="sub-sidebar" id="submenu-1">
+            <div class="sub-sidebar-list">
+                <div class="sub-sidebar-list-body"><a href="account/edit">Bilgileri düzenle</a></div>
+            </div>
+            <div class="sub-sidebar-list">
+                <div class="sub-sidebar-list-body"><a href="">Şifre değiştir</a></div>
+            </div>
+        </div>
+        <div class="sidebar-list">
+            <div class="sidebar-list-body"><a href="">Çıkış</a></div>
+        </div>
+    </div>
+</div>

@@ -19,7 +19,7 @@ class Home extends CI_Controller{
     public function dashboard(){
         $this->rf_template->set_language_file('home');
         $data = $this->rf_template->set_language_data(array('new','page_title' => 'homepage','save','name','surname','cancel'));
-        echo $this->rf_template->View('rufin',$data,array("header"=>"header","sidebar"=>"home/dashboard/sidebar","footer"=>"footer"),"home/dashboard/dashboard.php");
+        echo $this->rf_template->View('rufin',$data,array("header"=>"header","sidebar"=>"sidebar","footer"=>"footer"),"home/dashboard/dashboard.php");
     }
 }
 ?>

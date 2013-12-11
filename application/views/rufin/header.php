@@ -11,7 +11,8 @@
             </div>
             <div class="menu">
                 <ul>
-                    <li></li>
+                    <li><a href="">Kullanıcı Adı</a></li>
+                    <li><a href="">Çıkış</a></li>
                 </ul>
             </div>
         </div>
