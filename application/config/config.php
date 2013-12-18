@@ -21,6 +21,8 @@ if(strstr($_SERVER["SERVER_NAME"],'127')){
     $config['base_url']	= 'http://127.0.0.1:81/rufin/';
 }elseif(strstr($_SERVER["SERVER_NAME"] , 'vm-1')){
     $config['base_url'] = 'http://vm-1.mertcanekren.kd.io/rufin/';
+}elseif(strstr($_SERVER["SERVER_NAME"] , 'localhost')){
+    $config['base_url']	= 'http://localhost:81/rufin/';
 }else{
     $config['base_url']	= 'http://localhost/rufin/';
 }

@@ -1,7 +1,7 @@
 $(function(){
 
     $('.sidebar-list').click(function(){
-        $('#submenu-'+ $(this).attr('sub-menu')).slideToggle();
+        $('#submenu-'+ $(this).attr('sub-menu')).slideToggle('fast');
     });
 
     /*

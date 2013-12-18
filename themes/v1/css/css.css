@@ -522,7 +522,7 @@ input[type="button"].btn-block {
 }
 .menu ul{
     list-style: none;
-    margin:0;
+    margin:0 15px 0 0;
     padding: 0;
     float: right;
 }
@@ -531,7 +531,7 @@ input[type="button"].btn-block {
 }
 .menu ul li a{
     color: #0088cc;
-    margin-left: 20px;
+    margin-left: 15px;
 }
 .homepage-lead{
     margin: 60px 0;
@@ -733,6 +733,7 @@ input[type="button"].btn-block {
 .sub-sidebar-list-body a{
     display: block;
     color: #046799;
+    font-size: 12px;
 }
 .dashboard{
     float: right;

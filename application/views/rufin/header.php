@@ -11,7 +11,10 @@
             </div>
             <div class="menu">
                 <ul>
-                    <li></li>
+                    <!--
+                    <li><a href="/signup"><?php echo $this->lang->line('signup'); ?></a></li>
+                    <li><a href="/login"><?php echo $this->lang->line('login'); ?></a></li>
+                    -->
                 </ul>
             </div>
         </div>

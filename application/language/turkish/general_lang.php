@@ -5,7 +5,7 @@
  * Site üzerinde olan genel dil tanımlamaları
  */
 
-$lang["login"] = "Giriş Yap";
+
 $lang["username"] = "Kullanıcı Adı";
 $lang["password"] = "Şifre";
 $lang["email"] = "Email";
@@ -20,11 +20,13 @@ $lang['homepage'] = "Anasayfa";
  * Header
  * View: /views/rufin/header.php
  */
-$lang["header_about"] = "Hakkında";
+$lang["login"] = "Kullanıcı Girişi";
+$lang["signup"] = "Üye Ol";
 
 /*
  * Footer
  * View: /views/rufin/footer.php
  */
+$lang["footer_about"] = "Hakkında";
 $lang["footer_text"] = "rufin © 2013";
 ?>

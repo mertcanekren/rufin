@@ -38,7 +38,7 @@
 |
 */
 
-$route['default_controller'] = "homepage";
+$route['default_controller'] = "user/login";
 $route['login'] = "user/login";
 $route['about'] = "staticpages/about";
 $route['home'] = "home/dashboard";
