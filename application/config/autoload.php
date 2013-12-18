@@ -80,7 +80,7 @@ $autoload['helper'] = array("url","language","file","form","my_form_helper","met
 |
 */
 
-$autoload['config'] = array();
+$autoload['config'] = array('langs');
 
 
 /*
