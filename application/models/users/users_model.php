@@ -10,7 +10,6 @@ class User_model extends CI_Model {
         $this->tablename = "users";
     }
 
-
     /**
      * addUser
      *
@@ -22,8 +21,8 @@ class User_model extends CI_Model {
      * @return bool
      */
     public function addUser($data = array()){
-        $form_data['createtime'] = time();
-        if($this->db->insert('users', $data)){
+        $data['createtime'] = time();
+        if($this->db->insert($this->tablename, $data)){
             return true;
         }else{
             return false;
@@ -41,10 +40,10 @@ class User_model extends CI_Model {
      * @param $data: array
      * @return bool
      */
-    public function editUser($id,$form_data=array()){
-        $not_data['lastupdate'] = time();
+    public function editUser($id,$data=array()){
+        $data['lastupdate'] = time();
         $this->db->where('id', $id);
-        if($this->db->update('users', $form_data)){
+        if($this->db->update($this->tablename, $data)){
             return true;
         }else{
             return false;
@@ -63,7 +62,7 @@ class User_model extends CI_Model {
      * @return int
      */
     public function checkEmail($email){
-        $check = $this->db->get_where('users', array('email' => $email));
+        $check = $this->db->get_where($this->tablename, array('email' => $email));
         return $check->result_array();
     }
 
@@ -79,7 +78,7 @@ class User_model extends CI_Model {
      * @return array
      */
     public function getUserbyEmailandPassword($email,$password){
-        $check = $this->db->get_where('users', array('email' => $email,'password' => sha1($password)));
+        $check = $this->db->get_where($this->tablename, array('email' => $email,'password' => sha1($password)));
         if($check->num_rows > 0){
             $data = $check->result_array();
             return $data[0];
@@ -100,7 +99,7 @@ class User_model extends CI_Model {
      * @return array
      */
     public function getUserbyId($id){
-        $check = $this->db->get_where('users', array('id' => $id));
+        $check = $this->db->get_where($this->tablename, array('id' => $id));
         if($check->num_rows > 0){
             $data = $check->result_array();
             return $data[0];
@@ -121,7 +120,7 @@ class User_model extends CI_Model {
      * @return array
      */
     public function getUserbyEmail($email){
-        $check = $this->db->get_where('users', array('email' => $email));
+        $check = $this->db->get_where($this->tablename, array('email' => $email));
         if($check->num_rows > 0){
             $data = $check->result_array();
             return $data[0];
@@ -141,7 +140,7 @@ class User_model extends CI_Model {
      * @return bool
      */
     public function checkLogin($email,$password){
-        $check = $this->db->get_where('users', array('email' => $email,'password' => sha1($password), 'status' => 't'));
+        $check = $this->db->get_where($this->tablename, array('email' => $email,'password' => sha1($password), 'status' => 't'));
         if($check->num_rows > 0){
             return true;
         }else{
@@ -163,7 +162,7 @@ class User_model extends CI_Model {
             'lastvisit' => time(),
         );
         $this->db->where('id', $id);
-        $this->db->update('users', $data);
+        $this->db->update($this->tablename, $data);
     }
 
     /**
