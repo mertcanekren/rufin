@@ -3,7 +3,7 @@
  * @olusturan: Mertcan Ekren <mertcanekren@windowslive.com>
  * @aciklama: Kullanıcıların veritabanı işlemlerini yapar
  */
-class User_model extends CI_Model {
+class Users_model extends CI_Model {
 
     function __construct(){
         parent::__construct();

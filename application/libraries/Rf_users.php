@@ -3,7 +3,7 @@
 Class Rf_users {
     function __construct(){
         $this->CI =& get_instance();
-        $this->CI->load->model("user/user_model");
+        $this->CI->load->model("users/users_model");
     }
 
     /**
@@ -18,10 +18,10 @@ Class Rf_users {
      * @return bool
      */
     public function login($email, $password){
-        if($this->CI->user_model->checkLogin($email,$password)){
-            $data=$this->CI->user_model->getUserbyEmailandPassword($email,$password);
+        if($this->CI->users_model->checkLogin($email,$password)){
+            $data=$this->CI->users_model->getUserbyEmailandPassword($email,$password);
             if($data["status"] == 't'){
-                $this->CI->user_model->updateLastvisitbyId($data["id"]);
+                $this->CI->users_model->updateLastvisitbyId($data["id"]);
                 $userdata = array(
                     'user' => array(
                         'email' => $data["email"],
