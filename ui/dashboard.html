@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>Navbar Template for Bootstrap</title>
+    <link href="../css/bootstrap.css" rel="stylesheet">
+    <link href="../css/bootstrap-theme.css" rel="stylesheet">
+    <link href="../css/custom.css" rel="stylesheet">
+</head> 
+<body> 
+  <div class="navbar navbar-default navbar-static-top" role="navigation">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="#">Proje Yönetim Sistemi</a>
+      </div>
+      <div class="navbar-collapse collapse">
+        <ul class="nav navbar-nav">
+          <li><a href="#">Pano</a></li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                Projeler
+                <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+              <li><a href="#">Test</a></li>
+            </ul>
+          </li>
+          <li><a href="#">Talep Oluştur</a></li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                <span class="glyphicon glyphicon-plus"></span>
+                <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+              <li><a href="#">Yeni Proje Ekle</a></li>
+              <li><a href="#">Yeni Kullanıcı Ekle</a></li>
+            </ul>
+          </li>
+          <li >
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                <span class="glyphicon glyphicon-wrench"></span>
+                <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+              <li><a href="#">Ayarlar</a></li>
+              <li class="divider"></li>
+              <li class="dropdown-header">Kullanıcı</li>
+              <li><a href="#">Çıkış</a></li>
+            </ul>
+          </li>
+           <li data-toggle="tooltip" data-placement="bottom" title="Çıkış"><a href=""><span class="glyphicon glyphicon-log-out"></span></a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <ol class="breadcrumb">
+      <li><a href="#">Pano</a></li>
+    </ol>
+    <div class="col-xs-12 col-sm-6 ">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h3 class="panel-title">Aktiviteler 
+            <span class="right" style="font-size:12px">Bu Gün <span class="badge">42</span></span>
+          </h3>
+        </div>
+
+        <div class="list-group activity_row">
+          <div class="media list-group-item activity_content">
+            <a class="pull-left" href="#">
+            <img src="../img/profile.jpg" alt=""></a>
+            <div class="media-body">
+              <h5 class="media-heading"><a href="#">Username</a> yeni proje oluşturdu <a href="#">Test</a> <span class="label label-new-project">Proje</span></h5>
+              <span class="activity_content_span">Proje yönetim sistemi oluşturulacak.</span>
+              <div class="clear"></div>
+              <span class="activity_content_time">05.04.2013 14:43</span>
+            </div>
+          </div>
+        </div>
+
+
+        <div class="list-group activity_row">
+          <div class="media list-group-item activity_content">
+            <a class="pull-left" href="#">
+            <img src="../img/profile.jpg" alt=""></a>
+            <div class="media-body">
+              <h5 class="media-heading"><a href="#">Username</a> yeni talep oluşturdu <a href="#">Test içerik eklenecek</a> <span class="label label-new-request">Talep</span></h5>
+              <span class="activity_content_span">Test içerikler gerek.</span>
+              <div class="clear"></div>
+              <span class="activity_content_time">05.04.2013 14:43</span>
+            </div>
+          </div>
+        </div>
+      
+     
+      </div>
+    </div>
+    <div class="col-xs-12 col-sm-6">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h3 class="panel-title">Bana Atanan Talepler</h3>
+        </div>
+        <div class="list-group">
+          <a href="#" class="list-group-item">
+            Cras justo odio
+          </a>
+          <a href="#" class="list-group-item">Dapibus ac facilisis in</a>
+          <a href="#" class="list-group-item">Morbi leo risus</a>
+          <a href="#" class="list-group-item">Porta ac consectetur ac</a>
+          <a href="#" class="list-group-item">Vestibulum at eros</a>
+        </div>
+      </div>
+    </div>
+  </div>
+   <div id="footer">
+      <div class="container">
+        <p class="text-muted">&copy; 2014</p>
+      </div>
+    </div>
+</body>
+<script src="../js/jquery.js"></script>
+<script src="../js/javascript.js"></script>
+<script src="../js/bootstrap.min.js"></script>
+</html>
