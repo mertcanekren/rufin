@@ -11,12 +11,7 @@
 .container .text-muted {
 	margin: 20px 0;
 }
-ul.nav.navbar-nav li a{
-	color:black;
-}
-ul.nav.navbar-nav li a:hover{
-	color:rgb(27, 173, 255);
-}
+
 .right{
 	float:right;
 }

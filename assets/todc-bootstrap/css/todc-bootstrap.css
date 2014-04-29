@@ -47,11 +47,11 @@ textarea {
   line-height: inherit;
 }
 a {
-  color: #15c;
+  color: #4A8DFF;
 }
 a:hover,
 a:focus {
-  color: #15c;
+  color: #295F8F;
 }
 .img-rounded {
   border-radius: 4px;
@@ -3393,7 +3393,7 @@ li.list-group-header {
 }
 .panel-default > .panel-heading {
   color: #333;
-  background-color: #f3f3f3;
+  background-color: #fff;
   border-color: #fff;
 }
 .panel-default > .panel-heading + .panel-collapse .panel-body {
