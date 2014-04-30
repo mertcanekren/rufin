@@ -38,3 +38,6 @@
 .label-new-request {
 	background-color: #428bca;
 }
+.form-control{
+	width: 90%!important;
+}
