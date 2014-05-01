@@ -1,0 +1,43 @@
+.clear{
+	clear: both;
+}
+#footer {
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	height: 60px;
+	background-color: #f5f5f5;
+}
+.container .text-muted {
+	margin: 20px 0;
+}
+
+.right{
+	float:right;
+}
+.activity_content{
+	border: none!important;
+}
+.activity_content_span{
+	font-size: 13px;
+}
+.activity_content_time{
+	font-size:11px;
+}
+.activity_row{
+	border: none;
+	border-bottom: 1px solid #ddd!important;
+
+}
+.activity_row:last-child{
+	border-bottom: none!important;
+}
+.label-new-project{
+	background-color: #f0ad4e;
+}
+.label-new-request {
+	background-color: #428bca;
+}
+.form-control{
+	width: 90%!important;
+}
