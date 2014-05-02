@@ -38,7 +38,7 @@
             </ul>
           </li>
           <li>
-          {{ HTML::link(URL::route('new-issue'), 'Yeni Talep Ekle', array('data-target' => "#modal", "data-toggle" => "modal")) }}
+          {{ HTML::link(URL::route('new-issue'), 'Yeni Talep Ekle') }}
           </li>
         </ul>
         <ul class="nav navbar-nav navbar-right">
@@ -49,7 +49,6 @@
             </a>
             <ul class="dropdown-menu">
               <li><a href="#">Yeni Proje Ekle</a></li>
-              <li><a href="#">Yeni Kullanıcı Ekle</a></li>
             </ul>
           </li>
           <li >
@@ -74,16 +73,11 @@
       <li class="active"><a href="#">Pano</a></li>
     </ol>
     @yield('content')
-    <div id="footer">
-      <div class="container">
-        <p class="text-muted">&copy; 2014</p>
-      </div>
+  </div>
+  <div id="footer">
+    <div class="container">
+      <p class="text-muted">&copy; 2014</p>
     </div>
-    <div class="modal fade" role="dialog" id="modal">
-      <div class="modal-dialog modal-lg">
-        <div class="modal-content">
-        </div>
-      </div>
-    </div>  
+  </div> 
 </body>
 </html>
