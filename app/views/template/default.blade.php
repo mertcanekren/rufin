@@ -27,7 +27,7 @@
       </div>
       <div class="navbar-collapse collapse">
         <ul class="nav navbar-nav">
-          <li ><a href="#">Pano</a></li>
+          <li ><a href="dashboard">Pano</a></li>
           <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                 Projeler

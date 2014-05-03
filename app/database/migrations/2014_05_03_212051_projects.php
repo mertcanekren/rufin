@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class Users extends Migration {
+class Projects extends Migration {
 
 	/**
 	 * Run the migrations.
@@ -12,18 +12,16 @@ class Users extends Migration {
 	 */
 	public function up()
 	{
-	 	Schema::create('users', function($table)
+		Schema::create('projects', function($table)
 	   	{
 	   		$table->engine = 'InnoDB';
 	      	$table->increments('id');
-	      	$table->string('username', 155);
-	      	$table->string('password', 155);
-	      	$table->string('email', 155);
 	      	$table->string('name', 155);
-	      	$table->string('role');
+	      	$table->string('content', 155);
+	      	$table->string('status', 5);
+	      	$table->integer('user');
 	      	$table->timestamps();
 	   	});
-		
 	}
 
 	/**

@@ -6,6 +6,8 @@ return array(
 	'submit' => 'Kaydet',
 	'cancel' => 'İptal',
 	'reset' => 'Temizle',
-	'settings' => 'Ayarlar'
+	'settings' => 'Ayarlar',
+	'required' => 'doldurumlalıdır.',
+	'db_error' => 'Kayıt eklenemedi. Lütfen tekrar deneyiniz.'
 
 );
