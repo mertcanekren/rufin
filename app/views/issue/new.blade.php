@@ -1,34 +1,38 @@
 @extends('template.default')
 @section('content')
-<h4>Yeni Talep Ekle</h4>
+<h4>{{Lang::get('project.new')}}</h4>
 {{ Form::open(array('route' => 'new-issue', 'method' => 'POST')) }}
   <div class="form-group">
-    {{ Form::label('', 'Proje') }}
+    {{ Form::label('', Lang::get('project.project')) }}
     {{ Form::select('project', array(
       'L' => 'Large', 
       'S' => 'Small'
     ), null, array('class' => 'form-control')) }}
   </div>
   <div class="form-group">
-    {{ Form::label('', 'Bileşenler') }}
+    {{ Form::label('', Lang::get('project.components')) }}
     {{ Form::select('project', array(
       'L' => 'Large', 
       'S' => 'Small'
     ), null, array('class' => 'form-control')) }}
   </div>
   <div class="form-group">
-    {{ Form::label('', 'Açıklama') }}
-    {{ Form::textarea('content', '', array('placeholder' => 'Proje Detayını Yazın', 'class' => 'form-control')) }}
+    {{ Form::label('', Lang::get('issue.name')) }}
+    {{ Form::text('name', '', array('placeholder' => Lang::get('issue.name'), 'class' => 'form-control')); }}
   </div>
   <div class="form-group">
-    {{ Form::label('', 'Atanan') }}
+    {{ Form::label('', Lang::get('general.content')) }}
+    {{ Form::textarea('content', '', array('placeholder' => Lang::get('issue.write_detail'), 'class' => 'form-control')) }}
+  </div>
+  <div class="form-group">
+    {{ Form::label('', Lang::get('project.assigned_user')) }}
     {{ Form::select('project', array(
       '2' => 'user1', 
       '1' => 'user2'
     ), null, array('class' => 'form-control')) }}
   </div>
   <div class="form-group">
-      <button type="submit" class="btn btn-default">Kaydet</button>
+    {{Form::submit(Lang::get('general.submit'), array('class' => 'btn btn-default'))}}
   </div>
 {{ Form::close() }}
 @stop

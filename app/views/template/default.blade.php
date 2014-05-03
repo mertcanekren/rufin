@@ -38,7 +38,7 @@
             </ul>
           </li>
           <li>
-          {{ HTML::link(URL::route('new-issue'), 'Yeni Talep Ekle') }}
+          {{ HTML::link(URL::route('new-issue'), Lang::get('issue.new')) }}
           </li>
         </ul>
         <ul class="nav navbar-nav navbar-right">
@@ -48,7 +48,7 @@
                 <b class="caret"></b>
             </a>
             <ul class="dropdown-menu">
-              <li>{{ HTML::link(URL::route('new-project'), 'Yeni Proje Ekle') }}</li>
+              <li>{{ HTML::link(URL::route('new-project'), Lang::get('project.new')) }}</li>
             </ul>
           </li>
           <li >
@@ -57,7 +57,7 @@
                 <b class="caret"></b>
             </a>
             <ul class="dropdown-menu">
-              <li><a href="#">Ayarlar</a></li>
+              <li><a href="#">{{Lang::get('general.settings')}}</a></li>
               <li class="divider"></li>
               <li class="dropdown-header">Kullanıcı</li>
               <li><a href="#">Çıkış</a></li>
