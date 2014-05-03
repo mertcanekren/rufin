@@ -1,6 +1,7 @@
 @extends('template.default')
 @section('content')
-{{ Form::open(array('route' => 'new-issue', 'method' => 'POST', 'class' => 'form-horizontal')) }}
+<h4>Yeni Talep Ekle</h4>
+{{ Form::open(array('route' => 'new-issue', 'method' => 'POST')) }}
   <div class="form-group">
     {{ Form::label('', 'Proje') }}
     {{ Form::select('project', array(
