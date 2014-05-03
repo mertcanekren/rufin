@@ -34,9 +34,12 @@ class ProjectController extends BaseController {
         if (!$insert){
             return Redirect::route('new-project')->withInput()->withErrors(array('Tutar eklenirken teknik bir sorun oluştu...'));
         }
-		
-        return Redirect::route('new-project');
+        return Redirect::route('get-project', array('id' => $insert->id));
 
 	}
 
+	public function getProject($id){
+		$project = ProjectsModel::where('id', '=', $id)->first();
+		return View::make('project.project',compact('project'));
+	}
 }

@@ -17,3 +17,4 @@ Route::get('/new-issue', array('uses' => 'IssueController@newIssue', 'as' => 'ne
 Route::get('/login', array('uses' => 'UserController@login', 'as' => 'login'));
 Route::get('/new-project', array('uses' => 'ProjectController@newProject', 'as' => 'new-project'));
 Route::post('/add-project', array('uses' => 'ProjectController@addProject', 'as' => 'add-project'));
+Route::get('/project/{id}', array('uses' => 'ProjectController@getProject', 'as' => 'get-project'));
