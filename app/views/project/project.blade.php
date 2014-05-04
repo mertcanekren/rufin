@@ -1,6 +1,6 @@
 @extends('template.default')
 @section('content')
-	<h3>{{$project->name}} <small>Proje yönetim sistemi</small></h3>
+	<h3>{{ $project->name }}</h3>
 	<ul class="nav nav-tabs  nav-tabs-google" id="myTab">
 		<li class="active"><a href="#summary" data-toggle="tab">Özet</a></li>
 	  	<li><a href="#issue" data-toggle="tab">Talepler</a></li>
@@ -27,7 +27,7 @@
 				</dd>
 				<dt>Açıklama</dt>
 			  	<dd>
-			  		{{$project->tab-content}}
+			  	{{ $project->content }}
 				</dd>
 			</dl>
 	 	</div>

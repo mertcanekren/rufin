@@ -1,6 +1,6 @@
 @extends('template.default')
 @section('content')
-<h4>{{Lang::get('project.new')}}</h4>
+<h4>{{Lang::get('issue.new')}}</h4>
 {{ Form::open(array('route' => 'new-issue', 'method' => 'POST')) }}
   <div class="form-group">
     {{ Form::label('', Lang::get('project.project')) }}
