@@ -1,0 +1,38 @@
+<?php $__env->startSection('content'); ?>
+<h4><?php echo Lang::get('issue.new'); ?></h4>
+<?php echo Form::open(array('route' => 'new-issue', 'method' => 'POST')); ?>
+  <div class="form-group">
+    <?php echo Form::label('', Lang::get('project.project')); ?>
+    <?php echo Form::select('project', array(
+      'L' => 'Large', 
+      'S' => 'Small'
+    ), null, array('class' => 'form-control')); ?>
+  </div>
+  <div class="form-group">
+    <?php echo Form::label('', Lang::get('project.components')); ?>
+    <?php echo Form::select('project', array(
+      'L' => 'Large', 
+      'S' => 'Small'
+    ), null, array('class' => 'form-control')); ?>
+  </div>
+  <div class="form-group">
+    <?php echo Form::label('', Lang::get('issue.name')); ?>
+    <?php echo Form::text('name', '', array('placeholder' => Lang::get('issue.name'), 'class' => 'form-control'));; ?>
+  </div>
+  <div class="form-group">
+    <?php echo Form::label('', Lang::get('general.content')); ?>
+    <?php echo Form::textarea('content', '', array('placeholder' => Lang::get('issue.write_detail'), 'class' => 'form-control')); ?>
+  </div>
+  <div class="form-group">
+    <?php echo Form::label('', Lang::get('project.assigned_user')); ?>
+    <?php echo Form::select('project', array(
+      '2' => 'user1', 
+      '1' => 'user2'
+    ), null, array('class' => 'form-control')); ?>
+  </div>
+  <div class="form-group">
+    <?php echo Form::submit(Lang::get('general.submit'), array('class' => 'btn btn-default')); ?>
+  </div>
+<?php echo Form::close(); ?>
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('template.default', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
