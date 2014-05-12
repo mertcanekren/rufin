@@ -23,14 +23,14 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="#">Rufin</a>
+        {{ HTML::link(URL::route('home'), Lang::get('general.brand'), array('class' => 'navbar-brand')) }}
       </div>
       <div class="navbar-collapse collapse">
         <ul class="nav navbar-nav">
-          <li ><a href="dashboard">Pano</a></li>
+          <li>{{ HTML::link(URL::route('dashboard'), Lang::get('general.dashboard')) }}</li>
           <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                Projeler
+                {{ Lang::get('general.projects') }}
                 <b class="caret"></b>
             </a>
             <ul class="dropdown-menu">

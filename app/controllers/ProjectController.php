@@ -32,7 +32,7 @@ class ProjectController extends BaseController {
         ));
 
         if (!$insert){
-            return Redirect::route('new-project')->withInput()->withErrors(array('Tutar eklenirken teknik bir sorun oluştu...'));
+            return Redirect::route('new-project')->withInput()->withErrors(array('Kayıt eklenirken teknik bir sorun oluştu...'));
         }
         return Redirect::route('get-project', array('id' => $insert->id));
 	}
