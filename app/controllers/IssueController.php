@@ -4,8 +4,9 @@ class IssueController extends BaseController {
 
 	public function newIssue(){
 
-		
-		return View::make('issue.new');
+        $data["projects"] = DB::table('projects')->get();
+
+		return View::make('issue.new',compact('data'));
 	}
 
     public function addIssue(){

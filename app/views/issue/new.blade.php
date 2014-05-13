@@ -4,14 +4,15 @@
 {{ Form::open(array('route' => 'add-issue', 'method' => 'POST')) }}
   <div class="form-group">
     {{ Form::label('', Lang::get('project.project')) }}
-    {{ Form::select('project', array(
-      'L' => 'Large', 
-      'S' => 'Small'
-    ), null, array('class' => 'form-control')) }}
+      <select class="form-control" name="project">
+          @foreach ($data["projects"] as $projects)
+          <option value="{{$projects->id}}">{{$projects->name}}</option>
+          @endforeach
+      </select>
   </div>
   <div class="form-group">
     {{ Form::label('', Lang::get('project.components')) }}
-    {{ Form::select('project', array(
+    {{ Form::select('labels', array(
       'L' => 'Large', 
       'S' => 'Small'
     ), null, array('class' => 'form-control')) }}
