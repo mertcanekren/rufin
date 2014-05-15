@@ -10,9 +10,12 @@ class IssueController extends BaseController {
 	}
 
     public function addIssue(){
+
+
         $post_data = Input::all();
 
         print_r($post_data);
+
     }
 
 }
