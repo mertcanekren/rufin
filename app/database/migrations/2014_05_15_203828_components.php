@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class Settings extends Migration {
+class Components extends Migration {
 
 	/**
 	 * Run the migrations.
@@ -12,11 +12,10 @@ class Settings extends Migration {
 	 */
 	public function up()
 	{
-        Schema::create('settings', function($table)
+        Schema::create('components', function($table)
         {
             $table->engine = 'InnoDB';
             $table->increments('id');
-            $table->string('module', 155);
             $table->string('content');
             $table->timestamps();
         });
@@ -29,7 +28,7 @@ class Settings extends Migration {
 	 */
 	public function down()
 	{
-        Schema::drop('settings');
+        Schema::drop('components');
 	}
 
 }

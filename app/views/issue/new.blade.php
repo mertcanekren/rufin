@@ -1,21 +1,29 @@
 @extends('template.default')
 @section('content')
+{{ HTML::style('assets/js/bootstrap-tagsinput/bootstrap-tagsinput.css') }}
+{{ HTML::script('assets/js/bootstrap-tagsinput/bootstrap-tagsinput.min.js') }}
+<script>
+    $('input').tagsinput({
+        typeahead: {
+            source: function(query) {
+                return $.getJSON('citynames.json');
+            }
+        }
+    });
+</script>
 <h4>{{Lang::get('issue.new')}}</h4>
 {{ Form::open(array('route' => 'add-issue', 'method' => 'POST')) }}
   <div class="form-group">
     {{ Form::label('', Lang::get('project.project')) }}
       <select class="form-control" name="project">
           @foreach ($data["projects"] as $projects)
-          <option value="{{$projects->id}}">{{$projects->name}}</option>
+          <option value="{{$projects["id"]}}">{{$projects["name"]}}</option>
           @endforeach
       </select>
   </div>
   <div class="form-group">
     {{ Form::label('', Lang::get('project.components')) }}
-    {{ Form::select('labels', array(
-      'L' => 'Large', 
-      'S' => 'Small'
-    ), null, array('class' => 'form-control')) }}
+    <input type="text" value="{{$data["components"]}}" data-role="tagsinput" class="form-control" name="components"/>
   </div>
   <div class="form-group">
     {{ Form::label('', Lang::get('issue.name')) }}
