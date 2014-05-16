@@ -6,19 +6,14 @@ class IssueController extends BaseController {
 
         $data["projects"] = ProjectsModel::get()->toArray();
 
-        $components = ComponentsModel::all()->toArray();
+        $data["components"] = ComponentsModel::all()->toArray();
 
-        $data["components"] = "";
-        foreach($components as $comp){
-            $data["components"] .= $comp["content"].",";
-        }
 
 
 		return View::make('issue.new',compact('data'));
 	}
 
     public function addIssue(){
-
 
         $post_data = Input::all();
 

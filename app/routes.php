@@ -29,3 +29,6 @@ Route::get('/project/{id}', array('uses' => 'ProjectController@getProject', 'as'
 /* Kullanıcı */
 Route::get('/login', array('uses' => 'UserController@login', 'as' => 'login'));
 /* Kullanıcı */
+
+/* Ajax */
+/* Ajax*/

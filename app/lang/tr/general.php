@@ -10,6 +10,7 @@ return array(
 	'required'  => 'doldurumlalıdır.',
 	'db_error'  => 'Kayıt eklenemedi. Lütfen tekrar deneyiniz.',
     'dashboard' => 'Pano',
-    'projects'  => 'Projeler'
+    'projects'  => 'Projeler',
+    'select'    => 'Seçiniz'
 
 );
