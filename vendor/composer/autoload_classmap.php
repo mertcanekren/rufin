@@ -6,6 +6,7 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
+    'AjaxController' => $baseDir . '/app/controllers/AjaxController.php',
     'BaseController' => $baseDir . '/app/controllers/BaseController.php',
     'Boris\\Boris' => $vendorDir . '/d11wtq/boris/lib/Boris/Boris.php',
     'Boris\\CLIOptionsHandler' => $vendorDir . '/d11wtq/boris/lib/Boris/CLIOptionsHandler.php',
@@ -29,6 +30,7 @@ return array(
     'ClassPreloader\\Parser\\FileVisitor' => $vendorDir . '/classpreloader/classpreloader/src/ClassPreloader/Parser/FileVisitor.php',
     'ClassPreloader\\Parser\\NodeTraverser' => $vendorDir . '/classpreloader/classpreloader/src/ClassPreloader/Parser/NodeTraverser.php',
     'Components' => $baseDir . '/app/database/migrations/2014_05_15_203828_components.php',
+    'ComponentsModel' => $baseDir . '/app/models/ComponentsModel.php',
     'Crypt_AES' => $vendorDir . '/phpseclib/phpseclib/phpseclib/Crypt/AES.php',
     'Crypt_Base' => $vendorDir . '/phpseclib/phpseclib/phpseclib/Crypt/Base.php',
     'Crypt_Blowfish' => $vendorDir . '/phpseclib/phpseclib/phpseclib/Crypt/Blowfish.php',
@@ -1617,8 +1619,8 @@ return array(
     'System_SSH_Agent' => $vendorDir . '/phpseclib/phpseclib/phpseclib/System/SSH_Agent.php',
     'System_SSH_Agent_Identity' => $vendorDir . '/phpseclib/phpseclib/phpseclib/System/SSH_Agent.php',
     'TestCase' => $baseDir . '/app/tests/TestCase.php',
-    'User' => $baseDir . '/app/models/User.php',
     'UserController' => $baseDir . '/app/controllers/UserController.php',
+    'UserModel' => $baseDir . '/app/models/UserModel.php',
     'Users' => $baseDir . '/app/database/migrations/2014_05_01_164535_users.php',
     'Whoops\\Exception\\ErrorException' => $vendorDir . '/filp/whoops/src/Whoops/Exception/ErrorException.php',
     'Whoops\\Exception\\Frame' => $vendorDir . '/filp/whoops/src/Whoops/Exception/Frame.php',
@@ -1636,6 +1638,9 @@ return array(
     'Whoops\\Provider\\Zend\\ExceptionStrategy' => $vendorDir . '/filp/whoops/src/Whoops/Provider/Zend/ExceptionStrategy.php',
     'Whoops\\Provider\\Zend\\RouteNotFoundStrategy' => $vendorDir . '/filp/whoops/src/Whoops/Provider/Zend/RouteNotFoundStrategy.php',
     'Whoops\\Run' => $vendorDir . '/filp/whoops/src/Whoops/Run.php',
+    'createComponents' => $baseDir . '/app/database/seeds/DatabaseSeeder.php',
+    'createProjects' => $baseDir . '/app/database/seeds/DatabaseSeeder.php',
     'createSettingsData' => $baseDir . '/app/database/seeds/DatabaseSeeder.php',
     'createUserData' => $baseDir . '/app/database/seeds/DatabaseSeeder.php',
+    'issue' => $baseDir . '/app/database/migrations/2014_05_16_210603_issue.php',
 );

@@ -7,7 +7,7 @@ return array(
 	'cancel'    => 'İptal',
 	'reset'     => 'Temizle',
 	'settings'  => 'Ayarlar',
-	'required'  => 'doldurumlalıdır.',
+	'required'  => 'doldurulmalıdır.',
 	'db_error'  => 'Kayıt eklenemedi. Lütfen tekrar deneyiniz.',
     'dashboard' => 'Pano',
     'projects'  => 'Projeler',
