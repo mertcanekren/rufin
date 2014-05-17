@@ -33,36 +33,38 @@
         </div>
     </div>
     <div class="tab-pane" id="issue">
+        @if($data["issue"])
         <div class="col-xs-12 col-sm-12 ">
             <div class="panel-group" id="accordion">
-                @if($data["issue"])
-                    <?php @$a = 0 ?>
-                    @foreach ($data["issue"] as $issue)
-                    <?php $a ++ ?>
-                    <div class="panel panel-default">
-                        <div class="panel-heading">
-                            <h4 class="panel-title">
-                                <a data-toggle="collapse" data-parent="#accordion" href="#collapse{{$a}}">
-                                    {{$issue["title"]}} #{{$a}}
-                                </a>
-                            </h4>
-                        </div>
-                        <div id="collapse{{$a}}" class="panel-collapse collapse out">
-                            <div class="panel-body">
-                                {{$issue["title"]}}
-                                <div class="clear"></div>
-                                @if($issue["components_view"])
-                                    @foreach ($issue["components_view"] as $components_v)
-                                    <span class="label label-default">{{$components_v["content"]}}</span>
-                                    @endforeach
-                                @endif
-                            </div>
+                <?php @$a = 0 ?>
+                @foreach ($data["issue"] as $issue)
+                <?php $a ++ ?>
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">
+                            <a data-toggle="collapse" data-parent="#accordion" href="#collapse{{$a}}">
+                                {{$issue["title"]}} #{{$a}}
+                            </a>
+                        </h4>
+                    </div>
+                    <div id="collapse{{$a}}" class="panel-collapse collapse out">
+                        <div class="panel-body">
+                            {{$issue["title"]}}
+                            <div class="clear"></div>
+                            @if($issue["components_view"])
+                                @foreach ($issue["components_view"] as $components_v)
+                                <span class="label label-default">{{$components_v["content"]}}</span>
+                                @endforeach
+                            @endif
                         </div>
                     </div>
-                    @endforeach
-                @endif
+                </div>
+                @endforeach
             </div>
         </div>
+        @else
+            <h5>Kayıtlı talep bulunmamaktadır.</h5>
+        @endif
     </div>
 </div>
 @stop
