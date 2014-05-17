@@ -3,13 +3,8 @@
 class IssueController extends BaseController {
 
 	public function newIssue(){
-
         $data["projects"] = ProjectsModel::get()->toArray();
-
         $data["components"] = ComponentsModel::all()->toArray();
-
-
-
 		return View::make('issue.new',compact('data'));
 	}
 
@@ -35,11 +30,15 @@ class IssueController extends BaseController {
             return Redirect::route('new-issue')->withInput()->withErrors($validator->messages());
         }
 
-
-        $components = "";
-        foreach($post_data["components"] as $comp){
-            $components .= $comp.",";
+        if(isset($post_data["components"])){
+            $components = "";
+            foreach($post_data["components"] as $comp){
+                $components .= $comp.",";
+            }
+        }else{
+            $components = "";
         }
+
 
         $insert = IssueModel::create(array(
             'title' => $post_data['title'],
@@ -53,10 +52,15 @@ class IssueController extends BaseController {
             return Redirect::route('new-issue')->withInput()->withErrors(array('Kayıt eklenirken teknik bir sorun oluştu...'));
         }
 
-        return Redirect::route('new-issue');
+
+        return Redirect::route('issue', array('id' => $insert->id));
 
 
+    }
 
+    public function getIssue($id){
+        echo $id;
+        //return View::make('issue.new',compact('data'));
     }
 
 }

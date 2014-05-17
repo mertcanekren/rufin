@@ -17,6 +17,8 @@ Route::get('/dashboard', array('uses' => 'DashboardController@dashboard', 'as' =
 /* Talep */
 Route::get('/new-issue', array('uses' => 'IssueController@newIssue', 'as' => 'new-issue'));
 Route::post('/add-issue', array('uses' => 'IssueController@addIssue', 'as' => 'add-issue'));
+Route::get('/issue/{id}', array('uses' => 'IssueController@getIssue', 'as' => 'issue'));
+
 /* Talep */
 
 /* Proje */
