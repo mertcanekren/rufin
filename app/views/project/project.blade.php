@@ -63,7 +63,7 @@
             </div>
         </div>
         @else
-            <h5>Kayıtlı talep bulunmamaktadır.</h5>
+            <h5>{{ Lang::get('issue.no_issue') }}</h5>
         @endif
     </div>
 </div>
