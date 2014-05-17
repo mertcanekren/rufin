@@ -38,7 +38,20 @@ class ProjectController extends BaseController {
 	}
 
 	public function getProject($id){
-		$project = ProjectsModel::where('id', '=', $id)->first();
-		return View::make('project.project',compact('project'));
+		$data["project"] = ProjectsModel::where('id', '=', $id)->first()->toArray();
+		$data["issue"] = IssueModel::where('project_id', '=', $id)->get()->toArray();
+        if($data["issue"]){
+            $isue_count = 0;
+            foreach($data["issue"] as $issue){
+                foreach(explode(',',$issue["components"]) as $comp){
+                    if($comp != ""){
+                        $comp_db = ComponentsModel::where('id', '=', $comp)->first(array("content"))->toArray();
+                        $data["issue"][$isue_count]["components_view"][] = $comp_db;
+                    }
+                }
+                $isue_count++;
+            }
+        }
+        return View::make('project.project',compact('data'));
 	}
 }
