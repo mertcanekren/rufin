@@ -45,7 +45,7 @@ class IssueController extends BaseController {
             'title' => $post_data['title'],
             'content' => $post_data['content'],
             'project_id' => $post_data['project'],
-            'users' => $post_data['users'],
+            'user' => $post_data['users'],
             'components' => $components
         ));
 

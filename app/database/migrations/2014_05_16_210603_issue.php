@@ -19,7 +19,7 @@ class issue extends Migration {
             $table->integer('project_id');
             $table->string('title',150);
             $table->string('content');
-            $table->string('users',150);
+            $table->string('user',150);
             $table->string('components',150);
             $table->integer('status')->default(0);
             $table->timestamps();
