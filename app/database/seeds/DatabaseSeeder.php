@@ -47,6 +47,9 @@ class createComponents extends Seeder {
         $components->truncate();
         $components->content = "Veritabanı";
         $components->save();
+        $components2 = new ComponentsModel;
+        $components2->content = "Arayüz";
+        $components2->save();
         $this->command->info('Bileşenler tablosuna veri eklendi!');
 
     }

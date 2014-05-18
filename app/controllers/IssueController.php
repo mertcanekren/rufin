@@ -13,6 +13,7 @@ class IssueController extends BaseController {
 
         $post_data = Input::all();
 
+
         $validator = Validator::make(
             $post_data,
             array(
@@ -45,7 +46,7 @@ class IssueController extends BaseController {
             'title' => $post_data['title'],
             'content' => $post_data['content'],
             'project_id' => $post_data['project'],
-            'user' => $post_data['users'],
+            'users' => $post_data['users'],
             'components' => $components
         ));
 
