@@ -38,10 +38,12 @@
   </div>
   <div class="form-group">
     {{ Form::label('', Lang::get('project.assigned_user')) }}
-    {{ Form::select('users', array(
-      '2' => 'user1', 
-      '1' => 'user2'
-    ), null, array('class' => 'form-control')) }}
+      <select class="form-control" name="users">
+          <option value="">{{ Lang::get('general.select') }}</option>
+          @foreach ($data["users"] as $users)
+          <option value="{{$users["id"]}}">{{$users["name"]}}</option>
+          @endforeach
+      </select>
   </div>
   <div class="form-group">
     {{Form::submit(Lang::get('general.submit'), array('class' => 'btn btn-default'))}}

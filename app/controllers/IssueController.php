@@ -5,6 +5,7 @@ class IssueController extends BaseController {
 	public function newIssue(){
         $data["projects"] = ProjectsModel::get()->toArray();
         $data["components"] = ComponentsModel::all()->toArray();
+        $data["users"] = UserModel::where('username', '!=', "admin")->get()->toArray();
 		return View::make('issue.new',compact('data'));
 	}
 
