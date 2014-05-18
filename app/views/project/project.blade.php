@@ -19,7 +19,7 @@
                 </dd>
                 <dt>Toplam Talep</dt>
                 <dd>
-                    <span class="text-danger"><b>15</b></span>
+                    <span class="text-danger"><b>{{ $data["issue_count"] }}</b></span>
                 </dd>
                 <dt>Bitirilen Talepler</dt>
                 <dd>
@@ -35,7 +35,7 @@
     <div class="tab-pane" id="issue">
         @if($data["issue"])
         <div class="col-xs-12 col-sm-12 ">
-            <div class="panel-group" id="accordion">
+            <div class="panel-group" id="accordion" style="margin-top: 10px">
                 <?php @$a = 0 ?>
                 @foreach ($data["issue"] as $issue)
                 <?php $a ++ ?>
@@ -49,13 +49,14 @@
                     </div>
                     <div id="collapse{{$a}}" class="panel-collapse collapse out">
                         <div class="panel-body">
-                            {{$issue["title"]}}
-                            <div class="clear"></div>
-                            @if($issue["components_view"])
+                            @if(isset($issue["components_view"]))
                                 @foreach ($issue["components_view"] as $components_v)
                                 <span class="label label-default">{{$components_v["content"]}}</span>
                                 @endforeach
                             @endif
+                            <div class="clear"></div>
+                            <br/>
+                            <p>{{$issue["content"]}}</p>
                         </div>
                     </div>
                 </div>
