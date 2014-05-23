@@ -1,5 +1,20 @@
 @extends('template.default')
 @section('content')
+{{ HTML::style('assets/css/plugin/bootstrap-tags/bootstrap-tags.css') }}
+{{ HTML::script('assets/js/plugin/bootstrap-tags/bootstrap-tags.js') }}
+<script>
+    $(function(){
+        $("#components").tags({
+            tagSize: "sm",
+            suggestions: [@foreach ($data["components"] as $components) "{{$components["content"]}}",@endforeach ],
+            tagData: [],
+            caseInsensitive: true
+        });
+
+
+
+    });
+</script>
 <h4>{{Lang::get('issue.new')}}</h4>
 @if ($errors->count() > 0)
 <div class="alert alert-danger">
@@ -22,11 +37,7 @@
   </div>
   <div class="form-group">
     {{ Form::label('', Lang::get('project.components')) }}
-    @foreach ($data["components"] as $components)
-    <label class="checkbox-inline">
-        <input name="components[]" type="checkbox" value="{{$components["id"]}}"> {{$components["content"]}}
-    </label>
-    @endforeach
+    <div id="components"></div>
   </div>
   <div class="form-group">
     {{ Form::label('', Lang::get('issue.title')) }}

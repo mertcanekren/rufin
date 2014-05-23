@@ -12,7 +12,8 @@ class IssueController extends BaseController {
     public function addIssue(){
 
         $post_data = Input::all();
-
+        print_r($post_data);
+        /*
 
         $validator = Validator::make(
             $post_data,
@@ -56,7 +57,7 @@ class IssueController extends BaseController {
 
 
         return Redirect::route('issue', array('id' => $insert->id));
-
+*/
 
     }
 
