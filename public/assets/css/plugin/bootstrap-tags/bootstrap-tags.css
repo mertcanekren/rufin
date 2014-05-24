@@ -40,8 +40,12 @@
     margin: 0 .1em;
     float: left; }
   .bootstrap-tags .tag.sm {
-    padding: .7em .4em .6em;
-    font-size: 12px; }
+      padding: .3em .4em .4em;
+      font-size: 12px;
+      margin-top: 4px; }
+.bootstrap-tags .tag.sm:first-child {
+    margin-left: 5px;
+}
   .bootstrap-tags .tag.md {
     font-size: 14px; }
   .bootstrap-tags .tag.lg {
