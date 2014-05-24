@@ -48,7 +48,7 @@ class IssueController extends BaseController {
         }else{
             $components = "";
         }
-        
+
         $insert = IssueModel::create(array(
             'title' => $post_data['title'],
             'content' => $post_data['content'],

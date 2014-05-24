@@ -35,33 +35,39 @@
     <div class="tab-pane" id="issue">
         @if($data["issue"])
         <div class="col-xs-12 col-sm-12 ">
-            <div class="panel-group" id="accordion" style="margin-top: 10px">
-                <?php @$a = 0 ?>
-                @foreach ($data["issue"] as $issue)
-                <?php $a ++ ?>
-                <div class="panel panel-default">
-                    <div class="panel-heading">
-                        <h4 class="panel-title">
-                            <a data-toggle="collapse" data-parent="#accordion" href="#collapse{{$a}}">
-                                {{$issue["title"]}} #{{$a}}
-                            </a>
-                        </h4>
-                    </div>
-                    <div id="collapse{{$a}}" class="panel-collapse collapse out">
-                        <div class="panel-body">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Talep</th>
+                        <th>Kime Atanmış</th>
+                        <th>Bileşenler</th>
+                        <th>İşlemler</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach ($data["issue"] as $issue)
+                    <tr>
+                        <td>#{{$issue["id"]}}</td>
+                        <td>{{$issue["title"]}}</td>
+                        <td>Kime Atanmış</td>
+                        <td>
                             @if(isset($issue["components_view"]))
                                 @foreach ($issue["components_view"] as $components_v)
                                 <span class="label label-default">{{$components_v["content"]}}</span>
                                 @endforeach
                             @endif
-                            <div class="clear"></div>
-                            <br/>
-                            <p>{{$issue["content"]}}</p>
-                        </div>
-                    </div>
-                </div>
-                @endforeach
-            </div>
+                        </td>
+                        <td>
+                            {{ HTML::link(URL::route('issue',array('id' => $issue["id"])), Lang::get('general.viewed'), array('class' => 'btn btn-default btn-xs')) }}
+
+                            {{ HTML::link(URL::route('edit-issue',array('id' => $issue["id"])), Lang::get('general.edit'), array('class' => 'btn btn-primary btn-xs')) }}
+
+                        </td>
+                    </tr>
+                    @endforeach
+                </tbody>
+            </table>
         </div>
         @else
             <h5>{{ Lang::get('issue.no_issue') }}</h5>
