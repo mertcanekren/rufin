@@ -29,12 +29,12 @@
         <ul class="nav navbar-nav">
           <li>{{ HTML::link(URL::route('dashboard'), Lang::get('general.dashboard')) }}</li>
           <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" id="header_projects_menu">
                 {{ Lang::get('general.projects') }}
                 <b class="caret"></b>
             </a>
-            <ul class="dropdown-menu">
-              <li><a href="#">Test</a></li>
+            <ul class="dropdown-menu" id="projects">
+
             </ul>
           </li>
           <li>

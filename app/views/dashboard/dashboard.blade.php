@@ -11,7 +11,7 @@
         <div class="list-group activity_row">
           <div class="media list-group-item activity_content">
             <a class="pull-left" href="#">
-            <img src="../assets/img/profile.jpg" alt=""></a>
+            <img src="../public/assets/img/profile.jpg" alt=""></a>
             <div class="media-body">
               <h5 class="media-heading"><a href="#">Username</a> yeni proje oluşturdu <a href="#">Test</a> <span class="label label-new-project">Proje</span></h5>
               <span class="activity_content_span">Proje yönetim sistemi oluşturulacak.</span>
@@ -25,7 +25,7 @@
         <div class="list-group activity_row">
           <div class="media list-group-item activity_content">
             <a class="pull-left" href="#">
-            <img src="../assets/img/profile.jpg" alt=""></a>
+            <img src="../public/assets/img/profile.jpg" alt=""></a>
             <div class="media-body">
               <h5 class="media-heading"><a href="#">Username</a> yeni talep oluşturdu <a href="#">Test içerik eklenecek</a> <span class="label label-new-request">Talep</span></h5>
               <span class="activity_content_span">Test içerikler gerek.</span>

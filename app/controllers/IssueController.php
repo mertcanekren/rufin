@@ -12,8 +12,7 @@ class IssueController extends BaseController {
     public function addIssue(){
 
         $post_data = Input::all();
-        print_r($post_data);
-        /*
+
 
         $validator = Validator::make(
             $post_data,
@@ -36,28 +35,33 @@ class IssueController extends BaseController {
         if(isset($post_data["components"])){
             $components = "";
             foreach($post_data["components"] as $comp){
-                $components .= $comp.",";
+                $db_components = ComponentsModel::where('content', '=', $comp)->get()->toArray();
+                if($db_components){
+                    $components .= $db_components[0]["id"].",";
+                }else{
+                    $insert_components = ComponentsModel::create(array(
+                        'content' => $comp
+                    ));
+                    $components .= $insert_components->id.",";
+                }
             }
         }else{
             $components = "";
         }
-
-
+        
         $insert = IssueModel::create(array(
             'title' => $post_data['title'],
             'content' => $post_data['content'],
             'project_id' => $post_data['project'],
             'users' => $post_data['users'],
-            'components' => $components
+            'components' => substr($components,0,-1)
         ));
 
         if (!$insert){
             return Redirect::route('new-issue')->withInput()->withErrors(array('Kayıt eklenirken teknik bir sorun oluştu...'));
         }
 
-
         return Redirect::route('issue', array('id' => $insert->id));
-*/
 
     }
 

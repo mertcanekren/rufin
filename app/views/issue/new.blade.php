@@ -10,9 +10,6 @@
             tagData: [],
             caseInsensitive: true
         });
-
-
-
     });
 </script>
 <h4>{{Lang::get('issue.new')}}</h4>
