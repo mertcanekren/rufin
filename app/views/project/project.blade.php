@@ -13,17 +13,13 @@
                 <dd>
                     1.0
                 </dd>
-                <dt>Key</dt>
-                <dd>
-                    TES
-                </dd>
                 <dt>Toplam Talep</dt>
                 <dd>
                     <span class="text-danger"><b>{{ $data["issue_count"] }}</b></span>
                 </dd>
                 <dt>Bitirilen Talepler</dt>
                 <dd>
-                    <span class="text-info"><b>3</b></span>
+                    <span class="text-info"><b>{{ $data["completed_issue_count"] }}</b></span>
                 </dd>
                 <dt>Açıklama</dt>
                 <dd>
@@ -42,6 +38,7 @@
                         <th>Talep</th>
                         <th>Kime Atanmış</th>
                         <th>Bileşenler</th>
+                        <th>Durumu</th>
                         <th>İşlemler</th>
                     </tr>
                 </thead>
@@ -56,6 +53,15 @@
                                 @foreach ($issue["components_view"] as $components_v)
                                 <span class="label label-default">{{$components_v["content"]}}</span>
                                 @endforeach
+                            @endif
+                        </td>
+                        <td>
+                            @if($issue["status"] == 0)
+                            <span class="label label-default">Açık</span>
+                            @elseif($issue["status"] == 1)
+                            <span class="label label-primary">İşlem Yapılıyor</span>
+                            @else
+                            <span class="label label-success">Tamamlandı</span>
                             @endif
                         </td>
                         <td>
