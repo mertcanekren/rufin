@@ -1501,7 +1501,7 @@ return array(
     'Symfony\\Component\\Security\\Core\\User\\ChainUserProvider' => $vendorDir . '/symfony/security/Symfony/Component/Security/Core/User/ChainUserProvider.php',
     'Symfony\\Component\\Security\\Core\\User\\EquatableInterface' => $vendorDir . '/symfony/security/Symfony/Component/Security/Core/User/EquatableInterface.php',
     'Symfony\\Component\\Security\\Core\\User\\InMemoryUserProvider' => $vendorDir . '/symfony/security/Symfony/Component/Security/Core/User/InMemoryUserProvider.php',
-    'Symfony\\Component\\Security\\Core\\User\\User' => $vendorDir . '/symfony/security/Symfony/Component/Security/Core/User/User.php',
+    'Symfony\\Component\\Security\\Core\\User\\User' => $vendorDir . '/symfony/security/Symfony/Component/Security/Core/User/UserModel.php',
     'Symfony\\Component\\Security\\Core\\User\\UserChecker' => $vendorDir . '/symfony/security/Symfony/Component/Security/Core/User/UserChecker.php',
     'Symfony\\Component\\Security\\Core\\User\\UserCheckerInterface' => $vendorDir . '/symfony/security/Symfony/Component/Security/Core/User/UserCheckerInterface.php',
     'Symfony\\Component\\Security\\Core\\User\\UserInterface' => $vendorDir . '/symfony/security/Symfony/Component/Security/Core/User/UserInterface.php',

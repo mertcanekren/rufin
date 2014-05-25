@@ -12,6 +12,8 @@ class UserModel extends Eloquent implements UserInterface, RemindableInterface {
 	 */
 	protected $table = 'users';
     protected $fillable = array('username','password','name','email', 'status', 'role');
+    protected $primaryKey = 'id';
+
 
 
     /**

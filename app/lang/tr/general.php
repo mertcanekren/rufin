@@ -13,5 +13,7 @@ return array(
     'dashboard' => 'Pano',
     'projects'  => 'Projeler',
     'select'    => 'Seçiniz',
-    'viewed'    => 'İncele'
+    'viewed'    => 'İncele',
+    'email_validate' => 'Lütfen geçerli bir mail adresi yazın',
+    'logout' => 'Çıkış'
 );

@@ -42,6 +42,7 @@
           </li>
         </ul>
         <ul class="nav navbar-nav navbar-right">
+          <li>{{ HTML::link(URL::route('profile',array('id'  => Auth::user()->id)), Auth::user()->name) }}</li>
           <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                 <span class="glyphicon glyphicon-plus"></span>
@@ -51,7 +52,7 @@
               <li>{{ HTML::link(URL::route('new-project'), Lang::get('project.new')) }}</li>
             </ul>
           </li>
-          <li >
+          <li>
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                 <span class="glyphicon glyphicon-wrench"></span>
                 <b class="caret"></b>
@@ -60,10 +61,10 @@
               <li><a href="#">{{Lang::get('general.settings')}}</a></li>
               <li class="divider"></li>
               <li class="dropdown-header">Kullanıcı</li>
-              <li><a href="#">Çıkış</a></li>
+                <li>{{ HTML::link(URL::route('logout'), Lang::get('general.logout')) }}</li>
             </ul>
           </li>
-           <li data-toggle="tooltip" data-placement="bottom" title="Çıkış"><a href=""><span class="glyphicon glyphicon-log-out"></span></a></li>
+           <li data-toggle="tooltip" data-placement="bottom" title="Çıkış"><a href="{{ URL::route('logout') }}"><span class="glyphicon glyphicon-log-out"></span></a></li>
         </ul>
       </div>
     </div>

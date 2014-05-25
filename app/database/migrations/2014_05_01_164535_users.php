@@ -20,7 +20,9 @@ class Users extends Migration {
 	      	$table->string('password', 155);
 	      	$table->string('email', 155);
 	      	$table->string('name', 155);
-	      	$table->string('role');
+	      	$table->string('remember_token', 100);
+	      	$table->string('role',2);
+	      	$table->string('status',1);
 	      	$table->timestamps();
 	   	});
 		

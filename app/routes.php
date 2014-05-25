@@ -12,7 +12,7 @@
 */
 
 Route::get('/', array('uses' => 'DashboardController@dashboard', 'as' => 'home'));
-Route::get('/dashboard', array('uses' => 'DashboardController@dashboard', 'as' => 'dashboard'));
+Route::get('/dashboard', array('uses' => 'DashboardController@dashboard', 'as' => 'dashboard', 'before' => 'auth'));
 
 /* Talep */
 Route::get('/new-issue', array('uses' => 'IssueController@newIssue', 'as' => 'new-issue'));
@@ -31,6 +31,10 @@ Route::get('/project/{id}', array('uses' => 'ProjectController@getProject', 'as'
 
 /* Kullanıcı */
 Route::get('/login', array('uses' => 'UserController@login', 'as' => 'login'));
+Route::post('/signin', array('uses' => 'UserController@signIn', 'as' => 'signin'));
+Route::get('/logout', array('uses' => 'UserController@logout', 'as' => 'logout'));
+Route::get('/profile/{id}', array('uses' => 'UserController@profile', 'as' => 'profile'));
+
 /* Kullanıcı */
 
 /* Ajax */

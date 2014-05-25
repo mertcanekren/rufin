@@ -29,22 +29,31 @@
   </div>
   <div class="container" style="margin-top:50px">
     <div class="col-md-4 col-md-offset-4">
+        @if ($errors->count() > 0)
+        <div class="alert alert-danger">
+            <ul>
+                @foreach ($errors->all() as $msg)
+                <li>{{ $msg }}</li>
+                @endforeach
+            </ul>
+        </div>
+        @endif
       <div class="panel panel-success">
         <div class="panel-heading">
           <h3 class="panel-title"><strong>Giriş</strong></h3>
         </div>
         <div class="panel-body">
-          <form role="form">
+        {{ Form::open(array('route' => 'signin', 'method' => 'POST')) }}
           <div class="form-group">
-            <label>Kullanıcı Adı</label>
-            <input type="email" class="form-control" placeholder="Kullanıcı Adı">
+              {{ Form::label('', Lang::get('user.username')) }}
+              {{ Form::text('email', '', array('placeholder' => Lang::get('user.username'), 'class' => 'form-control')); }}
           </div>
           <div class="form-group">
-            <label>Şifre <a href="#">(şifremi unuttum)</a></label>
-            <input type="password" class="form-control" placeholder="Şifre">
+              {{ Form::label('', Lang::get('user.password')) }}
+              {{ Form::password('password', array('class' => 'form-control','placeholder' => Lang::get('user.password'))); }}
           </div>
           <button type="submit" class="btn btn-sm btn-default">Giriş</button>
-          </form>
+        {{ Form::close() }}
         </div>
       </div>
     </div>

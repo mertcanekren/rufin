@@ -86,18 +86,20 @@ class createUserData extends Seeder {
         $users = new UserModel;
         $users->truncate();
         $users->username = "admin";
-        $users->password = "1234";
+        $users->password = Hash::make("123456");
         $users->email = "admin@admin.com";
         $users->name = "Admin";
         $users->role = "1";
+        $users->status = "1";
         $users->save();
 
         $users2 = new UserModel;
         $users2->username = "mertcan";
-        $users2->password = "1234";
+        $users2->password = Hash::make("123456");;
         $users2->email = "mertcanekren@gmail.com";
         $users2->name = "Mertcan Ekren";
         $users2->role = "0";
+        $users2->status = "1";
         $users2->save();
         $this->command->info('Kullanıcılar tablosuna veri eklendi!');
 
