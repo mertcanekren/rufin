@@ -33,16 +33,16 @@
       </select>
   </div>
   <div class="form-group">
-    {{ Form::label('', Lang::get('project.components')) }}
-    <div id="components"></div>
-  </div>
-  <div class="form-group">
     {{ Form::label('', Lang::get('issue.title')) }}
     {{ Form::text('title', '', array('placeholder' => Lang::get('issue.title'), 'class' => 'form-control')); }}
   </div>
   <div class="form-group">
     {{ Form::label('', Lang::get('general.content')) }}
     {{ Form::textarea('content', '', array('placeholder' => Lang::get('issue.write_detail'), 'class' => 'form-control')) }}
+  </div>
+  <div class="form-group">
+    {{ Form::label('', Lang::get('project.components')) }}
+    <div id="components"></div>
   </div>
   <div class="form-group">
     {{ Form::label('', Lang::get('project.assigned_user')) }}
