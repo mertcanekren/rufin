@@ -47,7 +47,7 @@
   <div class="form-group">
     {{ Form::label('', Lang::get('project.assigned_user')) }}
       <select class="form-control" name="users">
-          <option value="">{{ Lang::get('general.select') }}</option>
+          <option value="{{Auth::user()->id}}">{{ Auth::user()->name." ".Lang::get('issue.select_myself') }}</option>
           @foreach ($data["users"] as $users)
           <option value="{{$users["id"]}}">{{$users["name"]}}</option>
           @endforeach
