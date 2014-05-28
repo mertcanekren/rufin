@@ -12,8 +12,6 @@ class IssueController extends BaseController {
     public function addIssue(){
 
         $post_data = Input::all();
-
-
         $validator = Validator::make(
             $post_data,
             array(
@@ -66,6 +64,17 @@ class IssueController extends BaseController {
     }
 
     public function getIssue($id){
+        $data["issue"] = IssueModel::where('id', '=', $id)->first()->toArray();
+        foreach(explode(',',$data["issue"]["components"]) as $comp){
+            if($comp != ""){
+                $comp_db = ComponentsModel::where('id', '=', $comp)->first(array("content"))->toArray();
+                $data["issue"]["components_view"][] = $comp_db;
+            }
+        }
+        return View::make('issue.issue',compact('data'));
+    }
+
+    public function editIssue($id){
         echo $id;
         //return View::make('issue.new',compact('data'));
     }

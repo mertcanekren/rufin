@@ -15,5 +15,6 @@ return array(
     'select'    => 'Seçiniz',
     'viewed'    => 'İncele',
     'email_validate' => 'Lütfen geçerli bir mail adresi yazın',
-    'logout' => 'Çıkış'
+    'logout' => 'Çıkış',
+    'created_at' => 'Oluşturulma Zamanı'
 );

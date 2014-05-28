@@ -38,7 +38,6 @@ class ProjectController extends BaseController {
 	}
 
 	public function getProject($id){
-
 		$data["project"] = ProjectsModel::where('id', '=', $id)->first()->toArray();
 		$data["issue"] = IssueModel::where('project_id', '=', $id)->get()->toArray();
         $data["issue_count"] = count($data["issue"]);

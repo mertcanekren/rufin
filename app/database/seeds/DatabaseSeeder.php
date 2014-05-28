@@ -94,10 +94,10 @@ class createUserData extends Seeder {
         $users->save();
 
         $users2 = new UserModel;
-        $users2->username = "mertcan";
+        $users2->username = "kullanıcı";
         $users2->password = Hash::make("123456");;
-        $users2->email = "mertcanekren@gmail.com";
-        $users2->name = "Mertcan Ekren";
+        $users2->email = "kullanici@gmail.com";
+        $users2->name = "Kullanıcı";
         $users2->role = "0";
         $users2->status = "1";
         $users2->save();
