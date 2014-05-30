@@ -70,9 +70,11 @@
     </div>
   </div>
   <div class="container">
+    <!--
     <ol class="breadcrumb breadcrumb-sm">
       <li class="active"><a href="#">Pano</a></li>
     </ol>
+    -->
     @yield('content')
   </div>
   <div id="footer">
