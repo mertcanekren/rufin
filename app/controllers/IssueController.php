@@ -65,6 +65,7 @@ class IssueController extends BaseController {
 
     public function getIssue($id){
         $data["issue"] = IssueModel::where('id', '=', $id)->first()->toArray();
+        $data["users"] = UserModel::where('id' , '=' , $data["issue"]["users"])->first()->toArray();
         foreach(explode(',',$data["issue"]["components"]) as $comp){
             if($comp != ""){
                 $comp_db = ComponentsModel::where('id', '=', $comp)->first(array("content"))->toArray();
