@@ -19,7 +19,6 @@ class Projects extends Migration {
 	      	$table->string('name', 155);
 	      	$table->string('content', 155);
 	      	$table->string('status', 5);
-	      	$table->integer('user');
             $table->integer('creator');
             $table->integer('createtime');
             $table->integer('update_time');

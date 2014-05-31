@@ -27,8 +27,9 @@ class ProjectController extends BaseController {
         $insert = ProjectsModel::create(array(
 			'name' => $post_data['name'],
 			'content' => $post_data['content'],
-			'user' => 1,
-			'status' => 1
+			'status' => 1,
+            'createtime' => time(),
+            'creator' => Auth::user()->id
         ));
 
         if (!$insert){
@@ -48,7 +49,6 @@ class ProjectController extends BaseController {
                 if($issue["status"] == 2){
                     $data["completed_issue_count"] += 1;
                 }
-
                 if($issue["components"]){
                     foreach(explode(',',$issue["components"]) as $comp){
                         if($comp != ""){

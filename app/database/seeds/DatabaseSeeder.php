@@ -70,7 +70,6 @@ class createProjects extends Seeder {
         $projects->name = "Test";
         $projects->content = "Test";
         $projects->status = "t";
-        $projects->user = "1";
         $projects->createtime = time();
         $projects->save();
         $this->command->info('Proje tablosuna veri eklendi!');

@@ -38,7 +38,9 @@ class IssueController extends BaseController {
                     $components .= $db_components[0]["id"].",";
                 }else{
                     $insert_components = ComponentsModel::create(array(
-                        'content' => $comp
+                        'content' => $comp,
+                        'createtime' => time(),
+                        'creator' => Auth::user()->id
                     ));
                     $components .= $insert_components->id.",";
                 }
