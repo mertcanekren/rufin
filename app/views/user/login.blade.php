@@ -46,7 +46,7 @@
         {{ Form::open(array('route' => 'signin', 'method' => 'POST')) }}
           <div class="form-group">
               {{ Form::label('', Lang::get('user.username')) }}
-              {{ Form::text('email', '', array('placeholder' => Lang::get('user.username'), 'class' => 'form-control')); }}
+              {{ Form::text('username', '', array('placeholder' => Lang::get('user.username'), 'class' => 'form-control')); }}
           </div>
           <div class="form-group">
               {{ Form::label('', Lang::get('user.password')) }}

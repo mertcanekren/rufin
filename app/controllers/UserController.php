@@ -16,12 +16,11 @@ class UserController extends BaseController {
         $validator = Validator::make(
             $postData,
             array(
-                'email' => 'required|email',
+                'username' => 'required',
                 'password' => 'required'
             ),
             array(
-                'email.required' =>  Lang::get('user.username')." ".Lang::get('general.required'),
-                'email.email' => Lang::get('general.email_validate'),
+                'username.required' =>  Lang::get('user.username')." ".Lang::get('general.required'),
                 'password.required' =>  Lang::get('user.password')." ".Lang::get('general.required')
             )
         );
@@ -30,7 +29,7 @@ class UserController extends BaseController {
             return Redirect::route('login')->withInput()->withErrors($validator->messages());
         }
 
-        if ( ! Auth::attempt(array('email' => $postData['email'], 'password' => $postData['password'])) ) {
+        if ( ! Auth::attempt(array('username' => $postData['username'], 'password' => $postData['password'])) ) {
             return Redirect::route('login')->withInput()->withErrors(array('Girdiğiniz kullanıcı bilgileri geçerli değil'));
         }
         return Redirect::route('home');
