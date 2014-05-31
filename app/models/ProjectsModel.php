@@ -2,7 +2,8 @@
 class ProjectsModel extends Eloquent {
 
     protected $table = 'projects';
-	protected $fillable = array('name','content','status','user');
+    public $timestamps = false;
+	protected $fillable = array('name','content','status','user','creator','createtime','update_time');
 
 
 }

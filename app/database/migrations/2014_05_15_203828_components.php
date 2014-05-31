@@ -17,7 +17,9 @@ class Components extends Migration {
             $table->engine = 'InnoDB';
             $table->increments('id');
             $table->string('content');
-            $table->timestamps();
+            $table->integer('creator');
+            $table->integer('createtime');
+            $table->integer('update_time');
         });
 	}
 

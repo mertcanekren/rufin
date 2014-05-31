@@ -46,9 +46,11 @@ class createComponents extends Seeder {
         $components = new ComponentsModel;
         $components->truncate();
         $components->content = "Veritabanı";
+        $components->createtime = time();
         $components->save();
         $components2 = new ComponentsModel;
         $components2->content = "Arayüz";
+        $components->createtime = time();
         $components2->save();
         $this->command->info('Bileşenler tablosuna veri eklendi!');
 
@@ -69,6 +71,7 @@ class createProjects extends Seeder {
         $projects->content = "Test";
         $projects->status = "t";
         $projects->user = "1";
+        $projects->createtime = time();
         $projects->save();
         $this->command->info('Proje tablosuna veri eklendi!');
 
@@ -91,6 +94,7 @@ class createUserData extends Seeder {
         $users->name = "Admin";
         $users->role = "1";
         $users->status = "1";
+        $users->createtime = time();
         $users->save();
 
         $users2 = new UserModel;
@@ -100,6 +104,7 @@ class createUserData extends Seeder {
         $users2->name = "Kullanıcı";
         $users2->role = "0";
         $users2->status = "1";
+        $users2->createtime = time();
         $users2->save();
         $this->command->info('Kullanıcılar tablosuna veri eklendi!');
 

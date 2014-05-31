@@ -23,7 +23,7 @@
     <dt>{{ Form::label('', Lang::get('project.assigned_user')) }}</dt>
     <dd><p>{{ HTML::link(URL::route('profile',array('id'  => $data["users"]["id"])), $data["users"]["username"]) }}</p></dd>
     <dt>{{ Form::label('', Lang::get('general.created_at')) }}</dt>
-    <dd><p>{{$data["issue"]["created_at"]}}</p></dd>
+    <dd><p title="{{date('d.m.Y H:i',$data["issue"]["createtime"])}}">{{date('d.m.Y',$data["issue"]["createtime"])}}</p></dd>
     <dt>{{ Form::label('', Lang::get('project.components')) }}</dt>
     <dd><p>
         @if(isset($data["issue"]["components_view"]))

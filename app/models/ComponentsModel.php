@@ -2,7 +2,8 @@
 class ComponentsModel extends Eloquent {
 
     protected $table = 'components';
-	protected $fillable = array('content');
+    public $timestamps = false;
+    protected $fillable = array('content','createtime','update_time','creator');
 
 
 }

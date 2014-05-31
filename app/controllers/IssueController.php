@@ -52,7 +52,9 @@ class IssueController extends BaseController {
             'content' => $post_data['content'],
             'project_id' => $post_data['project'],
             'users' => $post_data['users'],
-            'components' => substr($components,0,-1)
+            'components' => substr($components,0,-1),
+            'createtime' => time(),
+            'creator' => Auth::user()->id
         ));
 
         if (!$insert){

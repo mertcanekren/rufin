@@ -17,12 +17,14 @@ class issue extends Migration {
             $table->engine = 'InnoDB';
             $table->increments('id');
             $table->integer('project_id');
+            $table->integer('creator');
             $table->string('title',150);
             $table->string('content');
             $table->string('users',150);
             $table->string('components',150);
             $table->integer('status')->default(0);
-            $table->timestamps();
+            $table->integer('createtime');
+            $table->integer('update_time');
         });
 	}
 

@@ -23,7 +23,9 @@ class Users extends Migration {
 	      	$table->string('remember_token', 100);
 	      	$table->string('role',2);
 	      	$table->string('status',1);
-	      	$table->timestamps();
+            $table->integer('createtime');
+            $table->integer('update_time');
+            $table->integer('creator');
 	   	});
 		
 	}
