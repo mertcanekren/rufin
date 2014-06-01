@@ -11,6 +11,7 @@ return array(
     'labels' => 'Etiketler',
     'open' => 'Açık',
     'close' => 'Kapalı',
-    'work' => 'Çalışma Aşamasında'
+    'work' => 'Çalışma Aşamasında',
+    'start_work' => 'Çalışmayı Başlat'
 
 );

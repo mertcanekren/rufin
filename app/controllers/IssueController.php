@@ -75,6 +75,7 @@ class IssueController extends BaseController {
     public function getIssue($id){
         $data["issue"] = IssueModel::where('id', '=', $id)->first()->toArray();
         $data["users"] = UserModel::where('id' , '=' , $data["issue"]["users"])->first()->toArray();
+        $data["reporter"] = UserModel::where('id' , '=' , $data["issue"]["creator"])->first()->toArray();
         foreach(explode(',',$data["issue"]["labels"]) as $comp){
             if($comp != ""){
                 $comp_db = LabelsModel::where('id', '=', $comp)->first(array("content"))->toArray();

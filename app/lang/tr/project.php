@@ -8,6 +8,7 @@ return array(
 	'new' => 'Yeni Proje Ekle',
 	'components' => 'Bileşen',
 	'assigned_user' => 'Atanan Kullanıcı',
+	'reporter_user' => 'Atayan Kullanıcı',
 	'labels' => 'Etiketler'
 
 );

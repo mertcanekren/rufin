@@ -16,14 +16,16 @@
 </style>
 <div class="btn-group">
     @if(Auth::user()->id == $data["issue"]["creator"])
-    <button type="button" class="btn btn-primary">Düzenle</button>
+        {{ HTML::link(URL::route('edit-issue',array('id' => $data["issue"]["id"])), Lang::get('general.edit'),array('type' => 'button', 'class' => 'btn btn-primary')) }}
     @endif
     @if(Auth::user()->id == $data["issue"]["users"])
-    <button type="button" class="btn btn-default">Çalışmayı Başlat</button>
+        <button type="button" class="btn btn-default" id="issue_work_button" start="0">{{Lang::get('issue.start_work')}}</button>
     @endif
 </div>
 <h3 class="page-header">Detaylar</h3>
 <dl class="dl-horizontal">
+    <dt>{{ Form::label('', Lang::get('project.reporter_user')) }}</dt>
+    <dd><p>{{ HTML::link(URL::route('profile',array('id'  => $data["reporter"]["id"])), $data["reporter"]["username"]) }}</p></dd>
     <dt>{{ Form::label('', Lang::get('project.assigned_user')) }}</dt>
     <dd><p>{{ HTML::link(URL::route('profile',array('id'  => $data["users"]["id"])), $data["users"]["username"]) }}</p></dd>
     <dt>{{ Form::label('', Lang::get('general.created_at')) }}</dt>

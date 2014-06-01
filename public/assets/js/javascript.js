@@ -26,4 +26,13 @@ $(function(){
         })
     });
 
+    $('#issue_work_button').click(function(){
+        if($(this).attr('start') == 1){
+            $(this).html('Çalışmayı Başlat');
+            $(this).attr('start',0);
+        }else{
+            $(this).html('Çalışmayı Durdur');
+            $(this).attr('start',1);
+        }
+    });
 });
