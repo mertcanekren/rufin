@@ -15,25 +15,35 @@
     }
 </style>
 <div class="btn-group">
+    @if(Auth::user()->id == $data["issue"]["creator"])
     <button type="button" class="btn btn-primary">Düzenle</button>
+    @endif
+    @if(Auth::user()->id == $data["issue"]["users"])
     <button type="button" class="btn btn-default">Çalışmayı Başlat</button>
+    @endif
 </div>
-<hr/>
+<h3 class="page-header">Detaylar</h3>
 <dl class="dl-horizontal">
     <dt>{{ Form::label('', Lang::get('project.assigned_user')) }}</dt>
     <dd><p>{{ HTML::link(URL::route('profile',array('id'  => $data["users"]["id"])), $data["users"]["username"]) }}</p></dd>
     <dt>{{ Form::label('', Lang::get('general.created_at')) }}</dt>
     <dd><p title="{{date('d.m.Y H:i',$data["issue"]["createtime"])}}">{{date('d.m.Y',$data["issue"]["createtime"])}}</p></dd>
+    <dt>{{ Form::label('', Lang::get('general.status')) }}</dt>
+    <dd><p>{{$data["issue"]["status_v"]}}</p></dd>
     <dt>{{ Form::label('', Lang::get('project.components')) }}</dt>
+    <dd><p>{{$data["issue"]["component_view"]["content"]}}</p></dd>
+    <dt>{{ Form::label('', Lang::get('issue.type')) }}</dt>
+    <dd><p>{{$data["issue"]["type_view"]["content"]}}</p></dd>
+    <dt>{{ Form::label('', Lang::get('project.labels')) }}</dt>
     <dd><p>
-        @if(isset($data["issue"]["components_view"]))
-            @foreach ($data["issue"]["components_view"] as $components_v)
-            <span class="label label-default">{{$components_v["content"]}}</span>
+        @if(isset($data["issue"]["labels_view"]))
+            @foreach ($data["issue"]["labels_view"] as $labels_v)
+            <span class="label label-default">{{$labels_v["content"]}}</span>
             @endforeach
         @endif
         </p>
     </dd>
-    <dt>{{ Form::label('', Lang::get('general.content')) }}</dt>
-    <dd><p>{{$data["issue"]["content"]}}</p></dd>
 </dl>
+<h3 class="page-header">{{Lang::get('general.content')}}</h3>
+<p>{{$data["issue"]["content"]}}</p>
 @stop

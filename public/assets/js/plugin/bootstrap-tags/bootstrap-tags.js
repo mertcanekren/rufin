@@ -27,7 +27,7 @@
                 this.popoverTrigger || (this.popoverTrigger = "hover");
                 this.tagClass || (this.tagClass = "btn-info");
                 this.tagSize || (this.tagSize = "md");
-                this.promptText || (this.promptText = "Bileşenler");
+                this.promptText || (this.promptText = "Etiketler");
                 this.caseInsensitive || (this.caseInsensitive = false);
                 this.readOnlyEmptyMessage || (this.readOnlyEmptyMessage = "No tags to display...");
                 this.maxNumTags || (this.maxNumTags = -1);
@@ -568,7 +568,7 @@
             if (options == null) {
                 options = {};
             }
-            return "<div class='tag label " + options.tagClass + " " + options.tagSize + "' " + (options.isPopover ? "rel='popover'" : "") + ">    <span>" + Tags.Helpers.addPadding(options.tag, 2, options.isReadOnly) + "</span>    " + (options.isReadOnly ? "" : "<a><i class='remove glyphicon glyphicon-remove-sign glyphicon-white' /></a>") + "  </div><input type='hidden' name='components[]' value='" + Tags.Helpers.addPadding(options.tag, 2, options.isReadOnly) + "'>";
+            return "<div class='tag label " + options.tagClass + " " + options.tagSize + "' " + (options.isPopover ? "rel='popover'" : "") + ">    <span>" + Tags.Helpers.addPadding(options.tag, 2, options.isReadOnly) + "</span>    " + (options.isReadOnly ? "" : "<a><i class='remove glyphicon glyphicon-remove-sign glyphicon-white' /></a>") + "  </div><input type='hidden' name='labels[]' value='" + Tags.Helpers.addPadding(options.tag, 2, options.isReadOnly) + "'>";
         };
     }).call(this);
     (function() {

@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class issue extends Migration {
+class issueType extends Migration {
 
 	/**
 	 * Run the migrations.
@@ -12,19 +12,13 @@ class issue extends Migration {
 	 */
 	public function up()
 	{
-        Schema::create('issue', function($table)
+        Schema::create('issue_type', function($table)
         {
             $table->engine = 'InnoDB';
             $table->increments('id');
             $table->integer('project_id');
-            $table->integer('creator');
-            $table->string('title',150);
             $table->string('content');
-            $table->string('users',150);
-            $table->string('components',10);
-            $table->string('labels',150);
-            $table->string('type',50);
-            $table->integer('status')->default(0);
+            $table->integer('creator');
             $table->integer('createtime');
             $table->integer('update_time');
         });
@@ -37,7 +31,7 @@ class issue extends Migration {
 	 */
 	public function down()
 	{
-        Schema::drop('issue');
+        Schema::drop('issue_type');
 	}
 
 }

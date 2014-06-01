@@ -14,6 +14,8 @@ class DatabaseSeeder extends Seeder {
         // Ayalar tablosu kayıtıları
         $this->call('createSettingsData');
         $this->call('createComponents');
+        $this->call('createLabels');
+        $this->call('createIssueType');
         $this->call('createProjects');
         $this->call('createUserData');
 
@@ -53,6 +55,51 @@ class createComponents extends Seeder {
         $components->createtime = time();
         $components2->save();
         $this->command->info('Bileşenler tablosuna veri eklendi!');
+
+    }
+
+}
+
+/*
+ * Etiketler tablosuna ilk kayıtların eklenmesi
+ */
+class createLabels extends Seeder {
+
+    public function run()
+    {
+        $labels = new LabelsModel;
+        $labels->truncate();
+        $labels->content = "tasarım";
+        $labels->createtime = time();
+        $labels->save();
+        $labels2 = new LabelsModel;
+        $labels2->content = "programlama";
+        $labels2->createtime = time();
+        $labels2->save();
+        $this->command->info('Etiketler tablosuna veri eklendi!');
+
+    }
+
+}
+
+
+/*
+ * Talep tipleri tablosuna ilk kayıtların eklenmesi
+ */
+class createIssueType extends Seeder {
+
+    public function run()
+    {
+        $labels = new IssueTypeModel;
+        $labels->truncate();
+        $labels->content = "Bug";
+        $labels->createtime = time();
+        $labels->save();
+        $labels2 = new IssueTypeModel;
+        $labels2->content = "İyileştirme";
+        $labels2->createtime = time();
+        $labels2->save();
+        $this->command->info('Talep tipleri tablosuna veri eklendi!');
 
     }
 

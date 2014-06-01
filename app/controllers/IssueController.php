@@ -5,24 +5,27 @@ class IssueController extends BaseController {
 	public function newIssue(){
         $data["projects"] = ProjectsModel::get()->toArray();
         $data["components"] = ComponentsModel::all()->toArray();
+        $data["labels"] = LabelsModel::all()->toArray();
+        $data["type"] = IssueTypeModel::all()->toArray();
         $data["users"] = UserModel::where('username', '!=', "admin")->where('id', '!=', Auth::user()->id)->get()->toArray();
 		return View::make('issue.new',compact('data'));
 	}
 
     public function addIssue(){
-
         $post_data = Input::all();
         $validator = Validator::make(
             $post_data,
             array(
                 'project' => 'required',
                 'title' => 'required',
-                'content' => 'required'
+                'content' => 'required',
+                'users' => 'required'
             ),
             array(
                 'project.required' =>  Lang::get('project.project')." ".Lang::get('general.required'),
                 'title.required' =>  Lang::get('issue.title')." ".Lang::get('general.required'),
-                'content.required' =>  Lang::get('general.content')." ".Lang::get('general.required')
+                'content.required' =>  Lang::get('general.content')." ".Lang::get('general.required'),
+                'users.required' =>  Lang::get('project.assigned_user')." ".Lang::get('general.required')
             )
         );
 
@@ -30,23 +33,23 @@ class IssueController extends BaseController {
             return Redirect::route('new-issue')->withInput()->withErrors($validator->messages());
         }
 
-        if(isset($post_data["components"])){
-            $components = "";
-            foreach($post_data["components"] as $comp){
-                $db_components = ComponentsModel::where('content', '=', $comp)->get()->toArray();
-                if($db_components){
-                    $components .= $db_components[0]["id"].",";
+        if(isset($post_data["labels"])){
+            $labels = "";
+            foreach($post_data["labels"] as $lab){
+                $db_labels = LabelsModel::where('content', '=', $lab)->get()->toArray();
+                if($db_labels){
+                    $labels .= $db_labels[0]["id"].",";
                 }else{
-                    $insert_components = ComponentsModel::create(array(
-                        'content' => $comp,
+                    $insert_labels = LabelsModel::create(array(
+                        'content' => $lab,
                         'createtime' => time(),
                         'creator' => Auth::user()->id
                     ));
-                    $components .= $insert_components->id.",";
+                    $labels .= $insert_labels->id.",";
                 }
             }
         }else{
-            $components = "";
+            $labels = "";
         }
 
         $insert = IssueModel::create(array(
@@ -54,7 +57,9 @@ class IssueController extends BaseController {
             'content' => $post_data['content'],
             'project_id' => $post_data['project'],
             'users' => $post_data['users'],
-            'components' => substr($components,0,-1),
+            'type' => $post_data['type'],
+            'labels' => substr($labels,0,-1),
+            'components' => $post_data['components'],
             'createtime' => time(),
             'creator' => Auth::user()->id
         ));
@@ -70,11 +75,20 @@ class IssueController extends BaseController {
     public function getIssue($id){
         $data["issue"] = IssueModel::where('id', '=', $id)->first()->toArray();
         $data["users"] = UserModel::where('id' , '=' , $data["issue"]["users"])->first()->toArray();
-        foreach(explode(',',$data["issue"]["components"]) as $comp){
+        foreach(explode(',',$data["issue"]["labels"]) as $comp){
             if($comp != ""){
-                $comp_db = ComponentsModel::where('id', '=', $comp)->first(array("content"))->toArray();
-                $data["issue"]["components_view"][] = $comp_db;
+                $comp_db = LabelsModel::where('id', '=', $comp)->first(array("content"))->toArray();
+                $data["issue"]["labels_view"][] = $comp_db;
             }
+        }
+        $data["issue"]["component_view"] = ComponentsModel::where('id', '=', $data["issue"]["components"])->first(array("content"))->toArray();
+        $data["issue"]["type_view"] = IssueTypeModel::where('id', '=', $data["issue"]["type"])->first(array("content"))->toArray();
+        if($data["issue"]["status"] == "0"){
+            $data["issue"]["status_v"] = Lang::get('issue.open');
+        }elseif($data["issue"]["status"] == "1"){
+            $data["issue"]["status_v"] = Lang::get('issue.close');
+        }else{
+            $data["issue"]["status_v"] = Lang::get('issue.work');
         }
         return View::make('issue.issue',compact('data'));
     }

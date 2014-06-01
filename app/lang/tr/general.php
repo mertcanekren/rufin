@@ -16,5 +16,6 @@ return array(
     'viewed'    => 'İncele',
     'email_validate' => 'Lütfen geçerli bir mail adresi yazın',
     'logout' => 'Çıkış',
-    'created_at' => 'Oluşturulma Zamanı'
+    'created_at' => 'Oluşturulma Zamanı',
+    'status' => 'Durum'
 );

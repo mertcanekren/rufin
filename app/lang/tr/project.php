@@ -6,7 +6,8 @@ return array(
 	'name' => 'Proje Adı',
 	'write_detail' => 'Proje Detayını Yazın',
 	'new' => 'Yeni Proje Ekle',
-	'components' => 'Bileşenler',
-	'assigned_user' => 'Atanan Kullanıcı'
+	'components' => 'Bileşen',
+	'assigned_user' => 'Atanan Kullanıcı',
+	'labels' => 'Etiketler'
 
 );

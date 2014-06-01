@@ -9,6 +9,7 @@
     {{ HTML::style('assets/bootstrap/css/bootstrap.css') }}
     {{ HTML::style('assets/todc-bootstrap/css/todc-bootstrap.css') }}
     {{ HTML::style('assets/css/custom.css') }}
+    {{ HTML::style('assets/css/noboot.css') }}
     {{ HTML::script('assets/js/jquery.js') }}
     {{ HTML::script('assets/js/javascript.js') }}
     {{ HTML::script('assets/bootstrap/js/bootstrap.min.js') }}
