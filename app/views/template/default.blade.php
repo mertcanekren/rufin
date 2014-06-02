@@ -44,6 +44,7 @@
         </ul>
         <ul class="nav navbar-nav navbar-right">
           <li>{{ HTML::link(URL::route('profile',array('id'  => Auth::user()->id)), Auth::user()->name) }}</li>
+          @if(Auth::user()->role == "1")
           <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                 <span class="glyphicon glyphicon-plus"></span>
@@ -53,6 +54,7 @@
               <li>{{ HTML::link(URL::route('new-project'), Lang::get('project.new')) }}</li>
             </ul>
           </li>
+          @endif
           <li>
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                 <span class="glyphicon glyphicon-wrench"></span>

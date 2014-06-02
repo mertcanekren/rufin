@@ -66,8 +66,9 @@
                         </td>
                         <td>
                             {{ HTML::link(URL::route('issue',array('id' => $issue["id"])), Lang::get('general.viewed'), array('class' => 'btn btn-default btn-xs')) }}
-
-                            {{ HTML::link(URL::route('edit-issue',array('id' => $issue["id"])), Lang::get('general.edit'), array('class' => 'btn btn-primary btn-xs')) }}
+                            @if(Auth::user()->id == $issue["creator"])
+                                {{ HTML::link(URL::route('edit-issue',array('id' => $issue["id"])), Lang::get('general.edit'), array('class' => 'btn btn-primary btn-xs')) }}
+                            @endif
 
                         </td>
                     </tr>
