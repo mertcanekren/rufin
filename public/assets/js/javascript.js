@@ -8,6 +8,14 @@ $(function(){
 	  $(this).tab('show')
 	})
 
+    $(document).ajaxStart(function () {
+        $('body').prepend('<div class="loading"><div class="loading_content" style="position: absolute;left: 50%;top: 150px"><img src="../assets/img/ajax-loader.gif" alt="" style="position: relative;left: -50%"/></div></div>');
+    });
+
+    $(document).ajaxComplete(function () {
+        $('.loading').remove();
+    });
+
 
     // Menüde projeleri listelemek için
     $('#header_projects_menu').click(function(){

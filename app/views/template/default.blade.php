@@ -84,6 +84,6 @@
     <div class="container">
       <p class="text-muted">&copy; 2014</p>
     </div>
-  </div> 
+  </div>
 </body>
 </html>
