@@ -1,9 +1,11 @@
 @extends('template.default')
 @section('content')
-<div class="col-xs-12 col-sm-6 ">
+
+    <!--
+    <div class="col-xs-12 col-sm-6 ">
       <div class="panel panel-info">
         <div class="panel-heading">
-          <h3 class="panel-title">Aktiviteler 
+          <h3 class="panel-title">Aktiviteler
             <span class="right" style="font-size:12px">Bu Gün <span class="badge">42</span></span>
           </h3>
         </div>
@@ -34,11 +36,11 @@
             </div>
           </div>
         </div>
-      
-     
+
+
       </div>
     </div>
-    <div class="col-xs-12 col-sm-6">
+    -->
       <div class="panel panel-warning">
         <div class="panel-heading">
           <h3 class="panel-title">Bana Atanan Talepler</h3>
@@ -53,6 +55,6 @@
             @endif
         </div>
       </div>
-    </div>
+
   </div>
   @stop
