@@ -49,7 +49,7 @@
                     {{ HTML::link(URL::route('issue', array($issue["id"])), $issue["title"] , array('class' => 'list-group-item')) }}
                 @endforeach
             @else
-            <a href="#" class="list-group-item">{{ Lang::get('issue.no_issue') }}</a>
+            <div class="list-group-item">{{ Lang::get('issue.no_issue') }}</div>
             @endif
         </div>
       </div>

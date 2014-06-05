@@ -95,8 +95,23 @@ class IssueController extends BaseController {
     }
 
     public function editIssue($id){
-        echo $id;
-        //return View::make('issue.new',compact('data'));
+        $data["projects"] = ProjectsModel::get()->toArray();
+        $data["components"] = ComponentsModel::all()->toArray();
+        $data["labels"] = LabelsModel::all()->toArray();
+        $data["type"] = IssueTypeModel::all()->toArray();
+        $data["users"] = UserModel::where('username', '!=', "admin")->where('id', '!=', Auth::user()->id)->get()->toArray();
+
+        $data["issue"] = IssueModel::where('id', '=', $id)->first()->toArray();
+        $data["reporter"] = UserModel::where('id' , '=' , $data["issue"]["creator"])->first()->toArray();
+        foreach(explode(',',$data["issue"]["labels"]) as $comp){
+            if($comp != ""){
+                $comp_db = LabelsModel::where('id', '=', $comp)->first(array("content"))->toArray();
+                $data["issue"]["labels_view"][] = $comp_db;
+            }
+        }
+        $data["issue"]["component_view"] = ComponentsModel::where('id', '=', $data["issue"]["components"])->first(array("content"))->toArray();
+        $data["issue"]["type_view"] = IssueTypeModel::where('id', '=', $data["issue"]["type"])->first(array("content"))->toArray();
+        return View::make('issue.edit',compact('data'));
     }
 
 }

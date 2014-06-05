@@ -5,6 +5,7 @@ return array(
 	'title' => 'Talep Tanımı',
 	'write_detail' => 'Talep Detayını Yazın',
 	'new' => 'Yeni Talep Ekle',
+	'edit' => 'Talep Düzenle',
     'no_issue' => "Kayıtlı talep bulunmamaktadır.",
     'select_myself' => "(kendime)",
     'type' => 'Talep Tipi',
