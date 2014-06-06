@@ -11,7 +11,7 @@ $(function(){
 
     // Global ajax
     $(document).ajaxStart(function () {
-        $('body').prepend('<div class="loading"><div class="loading_content" style="position: absolute;left: 50%;top: 150px"><img src="../assets/img/ajax-loader.gif" alt="" style="position: relative;left: -50%"/></div></div>');
+        $('body').prepend('<div class="loading"><div class="loading_content" style="position: absolute;left: 50%;top: 150px"><img src="/rufin/public/assets/img/ajax-loader.gif" alt="" style="position: relative;left: -50%"/></div></div>');
     });
 
     $(document).ajaxComplete(function () {

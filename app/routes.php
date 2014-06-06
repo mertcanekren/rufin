@@ -18,7 +18,8 @@ Route::get('/dashboard', array('uses' => 'DashboardController@dashboard', 'as' =
 Route::get('/new-issue', array('uses' => 'IssueController@newIssue', 'as' => 'new-issue', 'before' => 'auth'));
 Route::post('/add-issue', array('uses' => 'IssueController@addIssue', 'as' => 'add-issue', 'before' => 'auth'));
 Route::get('/issue/{id}', array('uses' => 'IssueController@getIssue', 'as' => 'issue', 'before' => 'auth'));
-Route::get('/issue/{id}/edit', array('uses' => 'IssueController@editIssue', 'as' => 'edit-issue', 'before' => 'auth'));
+Route::get('/issue/{id}/edit', array('uses' => 'IssueController@editIssuePage', 'as' => 'edit-issue', 'before' => 'auth'));
+Route::post('/edit-issue', array('uses' => 'IssueController@editIssue', 'as' => 'editing-issue', 'before' => 'auth'));
 
 /* Talep */
 
