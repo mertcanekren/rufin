@@ -19,7 +19,13 @@
         {{ HTML::link(URL::route('edit-issue',array('id' => $data["issue"]["id"])), Lang::get('general.edit'),array('type' => 'button', 'class' => 'btn btn-primary')) }}
     @endif
     @if(Auth::user()->id == $data["issue"]["users"])
-        <button type="button" class="btn btn-default" id="issue_work_button" start="0">{{Lang::get('issue.start_work')}}</button>
+            @if($data["issue"]["status"] == 0)
+                <button type="button" class="btn btn-default" id="issue_work_button" start="0" data-id="{{$data["issue"]["id"]}}">{{Lang::get('issue.start_work')}}</button>
+            @elseif($data["issue"]["status"] == 1)
+                <button type="button" class="btn btn-success">{{Lang::get('issue.completed')}}</button>
+            @else
+                <button type="button" class="btn btn-default" id="issue_work_button" start="1" data-id="{{$data["issue"]["id"]}}">{{Lang::get('issue.stop_work')}}</button>
+            @endif
     @endif
 </div>
 <h3 class="page-header">Detaylar</h3>

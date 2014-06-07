@@ -42,11 +42,33 @@ $(function(){
 
     $('#issue_work_button').click(function(){
         if($(this).attr('start') == 1){
-            $(this).html('Çalışmayı Başlat');
-            $(this).attr('start',0);
+            $.ajax({
+                type : "post",
+                url: "/rufin/public/workIssue",
+                data:{
+                    id: $(this).data('id'),
+                    status : 0
+                },
+                success: function(){
+                    $('#issue_work_button').html('Çalışmayı Başlat');
+                    $('#issue_work_button').attr('start',0);
+                }
+            })
+            
         }else{
-            $(this).html('Çalışmayı Durdur');
-            $(this).attr('start',1);
+            $.ajax({
+                type : "post",
+                url: "/rufin/public/workIssue",
+                data:{
+                    id: $(this).data('id'),
+                    status : 3
+                },
+                success: function(){
+                    $('#issue_work_button').html('Çalışmayı Durdur');
+                    $('#issue_work_button').attr('start',1);
+                }
+            })
+            
         }
     });
 });

@@ -35,11 +35,11 @@
                     </td>
                     <td>
                         @if($issue["status"] == 0)
-                        <span class="label label-default">Açık</span>
+                        <span class="label label-default">{{Lang::get('issue.open')}}</span>
                         @elseif($issue["status"] == 1)
-                        <span class="label label-primary">İşlem Yapılıyor</span>
+                        <span class="label label-success">{{Lang::get('issue.completed')}}</span>
                         @else
-                        <span class="label label-success">Tamamlandı</span>
+                        <span class="label label-primary">{{Lang::get('issue.work')}}</span>
                         @endif
                     </td>
                     <td>

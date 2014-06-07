@@ -40,5 +40,5 @@ Route::get('/profile/{id}', array('uses' => 'UserController@profile', 'as' => 'p
 
 /* Ajax */
 Route::get('/getProjectsList', array('uses' => 'AjaxController@getProjectsList', 'as' => 'get-projectslist', 'before' => 'auth'));
-
+Route::post('/workIssue', array('uses' => 'AjaxController@workIssue', 'as' => 'work-issue', 'before' => 'auth'));
 /* Ajax*/

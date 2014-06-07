@@ -12,7 +12,9 @@ return array(
     'labels' => 'Etiketler',
     'open' => 'Açık',
     'close' => 'Kapalı',
-    'work' => 'Çalışma Aşamasında',
-    'start_work' => 'Çalışmayı Başlat'
+    'work' => 'İşlem Yapılıyor',
+    'start_work' => 'Çalışmayı Başlat',
+    'stop_work' => 'Çalışmayı Durdur',
+    'completed' => 'Tamamlandı'
 
 );
