@@ -25,7 +25,7 @@
                 <tr>
                     <td>#{{$issue["id"]}}</td>
                     <td>{{$issue["title"]}}</td>
-                    <td>Kime Atanmış</td>
+                    <td>{{ HTML::link(URL::route('profile',array('id'  => $issue["users"]["id"])), $issue["users"]["username"]) }}</td>
                     <td>
                         @if(isset($issue["components_view"]))
                         @foreach ($issue["components_view"] as $components_v)

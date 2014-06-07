@@ -41,11 +41,12 @@ class ProjectController extends BaseController {
 	public function getProject($id){
 		$data["project"] = ProjectsModel::where('id', '=', $id)->first()->toArray();
 		$data["issue"] = IssueModel::where('project_id', '=', $id)->get()->toArray();
-        $data["issue_count"] = count($data["issue"]);
+		$data["issue_count"] = count($data["issue"]);
         $data["completed_issue_count"] = 0;
         if($data["issue"]){
             $isue_count = 0;
             foreach($data["issue"] as $issue){
+                $data["issue"][$isue_count]["users"] = UserModel::where('id' , '=' , $issue["users"])->first(array("username","id"))->toArray();
                 if($issue["status"] == 2){
                     $data["completed_issue_count"] += 1;
                 }
@@ -60,7 +61,8 @@ class ProjectController extends BaseController {
                 $isue_count++;
             }
         }
-
+     
         return View::make('project.project',compact('data'));
+        
 	}
 }
