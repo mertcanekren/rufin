@@ -21,19 +21,23 @@ $(function(){
 
     // Menüde projeleri listelemek için
     $('#header_projects_menu').click(function(){
-        $.ajax({
-            type : "get",
-            url: "/rufin/public/getProjectsList",
-            dataType: 'json',
-            beforeSend:function(){
-                $('#projects').html(" ");
-            },
-            success: function(data){
-                $.each(data, function(i) {
-                    $('#projects').append("<li><a href='/rufin/public/project/"+data[i].id+"'>"+data[i].name+"</a></li>");
-                })
-            }
-        })
+        var comp = $(this).attr('completed');
+        if (typeof comp == 'undefined') {
+            $.ajax({
+                type : "get",
+                url: "/rufin/public/getProjectsList",
+                dataType: 'json',
+                beforeSend:function(){
+                    $('#projects').html(" ");
+                },
+                success: function(data){
+                    $('#header_projects_menu').attr('completed','ok');
+                    $.each(data, function(i) {
+                        $('#projects').append("<li><a href='/rufin/public/project/"+data[i].id+"'>"+data[i].name+"</a></li>");
+                    })
+                }
+            })
+        }
     });
 
     $('#issue_work_button').click(function(){
