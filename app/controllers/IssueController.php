@@ -163,7 +163,7 @@ class IssueController extends BaseController {
         $issue->components = $post_data["components"];
         $issue->save();
 
-        return Redirect::route('edit-issue',$post_data["rowid"]);
+        return Redirect::route('edit-issue',array('id' =>$post_data["rowid"],'succes' => "1"));
 
     }
 

@@ -13,6 +13,13 @@
     });
 </script>
 <h4>{{Lang::get('issue.edit')}}</h4>
+@if(@$_GET["succes"] == "1")
+<div class="alert alert-success">
+    <ul>
+        <li>{{Lang::get('general.success-edit')}}</li>
+    </ul>
+</div>
+@endif
 @if ($errors->count() > 0)
 <div class="alert alert-danger">
     <ul>

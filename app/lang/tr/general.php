@@ -17,5 +17,6 @@ return array(
     'email_validate' => 'Lütfen geçerli bir mail adresi yazın',
     'logout' => 'Çıkış',
     'created_at' => 'Oluşturulma Zamanı',
-    'status' => 'Durum'
+    'status' => 'Durum',
+    'success-edit' => 'Düzenleme tamamlandı'
 );
