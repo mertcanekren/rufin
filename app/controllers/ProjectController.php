@@ -61,8 +61,37 @@ class ProjectController extends BaseController {
                 $isue_count++;
             }
         }
-     
         return View::make('project.project',compact('data'));
-        
+	}
+	
+	public function editProjectPage($id){
+	    $data["project"] = ProjectsModel::where('id', '=', $id)->first()->toArray();
+	    return View::make('project.edit',compact('data'));
+	}
+	
+	public function editProject(){
+	    $post_data = Input::all();
+        $validator = Validator::make(
+			$post_data,
+			array(
+				'name' => 'required',
+				'content' => 'required'
+			),
+			array(
+				'name.required' =>  Lang::get('project.name')." ".Lang::get('general.required'),
+				'content.required' =>  Lang::get('general.content')." ".Lang::get('general.required')
+			)
+		);
+
+        if ($validator->fails()){            
+            return Redirect::route('edit-project')->withInput()->withErrors($validator->messages());
+        }
+
+        $projects = ProjectsModel::find($post_data["rowid"]);
+        $projects->name = $post_data["name"];
+        $projects->content = $post_data["content"];
+        $projects->save();
+
+        return Redirect::route('edit-project',array('id' =>$post_data["rowid"],'succes' => "1"));
 	}
 }

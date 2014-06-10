@@ -26,6 +26,8 @@ Route::post('/edit-issue', array('uses' => 'IssueController@editIssue', 'as' => 
 Route::get('/new-project', array('uses' => 'ProjectController@newProject', 'as' => 'new-project', 'before' => 'auth'));
 Route::post('/add-project', array('uses' => 'ProjectController@addProject', 'as' => 'add-project', 'before' => 'auth'));
 Route::get('/project/{id}', array('uses' => 'ProjectController@getProject', 'as' => 'get-project', 'before' => 'auth'));
+Route::get('/project/{id}/edit', array('uses' => 'ProjectController@editProjectPage', 'as' => 'edit-project', 'before' => 'auth'));
+Route::post('/edit-project', array('uses' => 'ProjectController@editProject', 'as' => 'editing-project', 'before' => 'auth'));
 /* Proje */
 
 

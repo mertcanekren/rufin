@@ -1,6 +1,10 @@
 @extends('template.default')
 @section('content')
-<h3>{{ $data["project"]["name"]}}</h3>
+<h3>{{$data["project"]["name"]}}
+@if(Auth::user()->id == $data["project"]["creator"])
+    {{ HTML::link(URL::route('edit-project',array('id' => $data["project"]["id"])), Lang::get('general.edit'), array('class' => 'btn btn-default btn-xs')) }}
+@endif
+</h3>
 <ul class="nav nav-tabs  nav-tabs-google" id="myTab">
     <li class="active"><a href="#issue" data-toggle="tab">Talepler</a></li>
     <li><a href="#summary" data-toggle="tab">Özet</a></li>

@@ -4,5 +4,6 @@ return array(
 	'project'       => 'Proje',
 	'name'          => 'Proje Adı',
 	'write_detail'  => 'Proje Detayını Yazın',
-	'new'           => 'Yeni Proje Ekle'
+	'new'           => 'Yeni Proje Ekle',
+	'edit'          => 'Proje Düzenle'
 );
