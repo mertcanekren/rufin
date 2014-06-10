@@ -49,15 +49,17 @@
 
         <dt>{{ Form::label('', Lang::get('issue.type')) }}</dt>
         <dd><p>{{$data["issue"]["type_view"]["content"]}}</p></dd>
+        @if(isset($data["issue"]["labels_view"]))
         <dt>{{ Form::label('', Lang::get('project.labels')) }}</dt>
         <dd><p>
-                @if(isset($data["issue"]["labels_view"]))
+                
                 @foreach ($data["issue"]["labels_view"] as $labels_v)
                 <span class="label label-default">{{$labels_v["content"]}}</span>
                 @endforeach
-                @endif
+                
             </p>
         </dd>
+        @endif
     </dl>
 </div>
 <div class="row"></div>

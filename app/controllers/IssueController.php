@@ -19,13 +19,18 @@ class IssueController extends BaseController {
                 'project' => 'required',
                 'title' => 'required',
                 'content' => 'required',
-                'users' => 'required'
+                'users' => 'required',
+                'type' => 'required',
+                'components' => 'required',
+                
             ),
             array(
                 'project.required' =>  Lang::get('project.project')." ".Lang::get('general.required'),
                 'title.required' =>  Lang::get('issue.title')." ".Lang::get('general.required'),
                 'content.required' =>  Lang::get('general.content')." ".Lang::get('general.required'),
-                'users.required' =>  Lang::get('project.assigned_user')." ".Lang::get('general.required')
+                'users.required' =>  Lang::get('project.assigned_user')." ".Lang::get('general.required'),
+                'type.required' =>  Lang::get('issue.type')." ".Lang::get('general.required'),
+                'components.required' =>  Lang::get('project.components')." ".Lang::get('general.required')
             )
         );
 
@@ -76,11 +81,13 @@ class IssueController extends BaseController {
         $data["issue"] = IssueModel::where('id', '=', $id)->first()->toArray();
         $data["users"] = UserModel::where('id' , '=' , $data["issue"]["users"])->first()->toArray();
         $data["reporter"] = UserModel::where('id' , '=' , $data["issue"]["creator"])->first()->toArray();
-        foreach(explode(',',$data["issue"]["labels"]) as $comp){
-            if($comp != ""){
-                $comp_db = LabelsModel::where('id', '=', $comp)->first(array("content"))->toArray();
-                $data["issue"]["labels_view"][] = $comp_db;
-            }
+        if($data["issue"]["labels"]){
+            foreach(explode(',',$data["issue"]["labels"]) as $comp){
+                if($comp != ""){
+                    $comp_db = LabelsModel::where('id', '=', $comp)->first(array("content"))->toArray();
+                    $data["issue"]["labels_view"][] = $comp_db;
+                }
+            }    
         }
         $data["issue"]["component_view"] = ComponentsModel::where('id', '=', $data["issue"]["components"])->first(array("content"))->toArray();
         $data["issue"]["type_view"] = IssueTypeModel::where('id', '=', $data["issue"]["type"])->first(array("content"))->toArray();
@@ -120,13 +127,18 @@ class IssueController extends BaseController {
                 'project' => 'required',
                 'title' => 'required',
                 'content' => 'required',
-                'users' => 'required'
+                'users' => 'required',
+                'type' => 'required',
+                'components' => 'required',
+                
             ),
             array(
                 'project.required' =>  Lang::get('project.project')." ".Lang::get('general.required'),
                 'title.required' =>  Lang::get('issue.title')." ".Lang::get('general.required'),
                 'content.required' =>  Lang::get('general.content')." ".Lang::get('general.required'),
-                'users.required' =>  Lang::get('project.assigned_user')." ".Lang::get('general.required')
+                'users.required' =>  Lang::get('project.assigned_user')." ".Lang::get('general.required'),
+                'type.required' =>  Lang::get('issue.type')." ".Lang::get('general.required'),
+                'components.required' =>  Lang::get('project.components')." ".Lang::get('general.required')
             )
         );
 
