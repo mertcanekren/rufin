@@ -18,7 +18,6 @@ $(function(){
         $('.loading').remove();
     });
 
-
     // Menüde projeleri listelemek için
     $('#header_projects_menu').click(function(){
         var comp = $(this).attr('completed');
@@ -52,6 +51,7 @@ $(function(){
                 success: function(){
                     $('#issue_work_button').html('Çalışmayı Başlat');
                     $('#issue_work_button').attr('start',0);
+                    $('#issue_status').html('Açık');
                 }
             })
             
@@ -66,6 +66,7 @@ $(function(){
                 success: function(){
                     $('#issue_work_button').html('Çalışmayı Durdur');
                     $('#issue_work_button').attr('start',1);
+                    $('#issue_status').html('İşlem Yapılıyor');
                 }
             })
             

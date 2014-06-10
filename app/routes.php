@@ -20,7 +20,6 @@ Route::post('/add-issue', array('uses' => 'IssueController@addIssue', 'as' => 'a
 Route::get('/issue/{id}', array('uses' => 'IssueController@getIssue', 'as' => 'issue', 'before' => 'auth'));
 Route::get('/issue/{id}/edit', array('uses' => 'IssueController@editIssuePage', 'as' => 'edit-issue', 'before' => 'auth'));
 Route::post('/edit-issue', array('uses' => 'IssueController@editIssue', 'as' => 'editing-issue', 'before' => 'auth'));
-
 /* Talep */
 
 /* Proje */
@@ -35,7 +34,6 @@ Route::get('/login', array('uses' => 'UserController@login', 'as' => 'login'));
 Route::post('/signin', array('uses' => 'UserController@signIn', 'as' => 'signin'));
 Route::get('/logout', array('uses' => 'UserController@logout', 'as' => 'logout', 'before' => 'auth'));
 Route::get('/profile/{id}', array('uses' => 'UserController@profile', 'as' => 'profile', 'before' => 'auth'));
-
 /* Kullanıcı */
 
 /* Ajax */

@@ -70,7 +70,7 @@ class IssueController extends BaseController {
         ));
 
         if (!$insert){
-            return Redirect::route('new-issue')->withInput()->withErrors(array('Kayıt eklenirken teknik bir sorun oluştu...'));
+            return Redirect::route('new-issue')->withInput()->withErrors(array('Kayıt eklenirken teknik bir sorun oluştu.'));
         }
 
         return Redirect::route('issue', array('id' => $insert->id));
@@ -79,6 +79,7 @@ class IssueController extends BaseController {
 
     public function getIssue($id){
         $data["issue"] = IssueModel::where('id', '=', $id)->first()->toArray();
+        $data["project"] = ProjectsModel::where('id', '=', $data["issue"]["project_id"])->first(array('name','id'))->toArray();
         $data["users"] = UserModel::where('id' , '=' , $data["issue"]["users"])->first()->toArray();
         $data["reporter"] = UserModel::where('id' , '=' , $data["issue"]["creator"])->first()->toArray();
         if($data["issue"]["labels"]){
@@ -178,6 +179,4 @@ class IssueController extends BaseController {
         return Redirect::route('edit-issue',array('id' =>$post_data["rowid"],'succes' => "1"));
 
     }
-
-
 }

@@ -41,19 +41,49 @@
       </div>
     </div>
     -->
-      <div class="panel panel-warning">
+    <div class="panel panel-warning">
         <div class="panel-heading">
           <h3 class="panel-title">Bana Atanan Talepler</h3>
         </div>
-        <div class="list-group">
+        <div class="panel-body">
             @if($data["issue"])
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th>{{Lang::get('general.id')}}</th>
+                        <th>{{Lang::get('general.issue')}}</th>
+                        <th>{{Lang::get('issue.components')}}</th>
+                        <th>{{Lang::get('general.actions')}}</th>
+                        <th>{{Lang::get('general.created_at')}}</th>
+                    </tr>
+                </thead>
+                <tbody>
                 @foreach ($data["issue"] as $issue)
-                    {{ HTML::link(URL::route('issue', array($issue["id"])), $issue["title"] , array('class' => 'list-group-item')) }}
+                <a href="asd">
+                <tr>
+                    <td>#{{$issue["id"]}}</td>
+                    <td>{{ HTML::link(URL::route('issue', array($issue["id"])), $issue["title"]) }}</td>
+                    <td>
+                        @if(isset($issue["components_view"]))
+                            @foreach ($issue["components_view"] as $components_v)
+                            <span class="label label-default">{{$components_v["content"]}}</span>
+                            @endforeach
+                        @endif
+                    </td>
+                    <td>
+                        {{ HTML::link(URL::route('issue',array('id' => $issue["id"])), Lang::get('general.viewed'), array('class' => 'btn btn-default btn-xs')) }}
+                    </td>
+                    <td title="{{date('d.m.Y H:i',$issue["createtime"])}}">
+                        {{date('d.m.Y',$issue["createtime"])}}
+                    </td>
+                </tr>
+                </a>
                 @endforeach
+                </tbody>
+            </table>
             @else
-            <div class="list-group-item">{{ Lang::get('issue.no_issue') }}</div>
+            <p>{{Lang::get('issue.no_issue')}}</p>
             @endif
         </div>
-      </div>
-  </div>
+    </div>
   @stop

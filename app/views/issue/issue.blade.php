@@ -31,32 +31,30 @@
 <h3 class="page-header">Detaylar</h3>
 <div class="col-xs-6">
     <dl class="dl-horizontal">
-        <dt>{{ Form::label('', Lang::get('project.assigned_user')) }}</dt>
-        <dd><p>{{ HTML::link(URL::route('profile',array('id'  => $data["users"]["id"])), $data["users"]["username"]) }}</p></dd>
+        <dt>{{ Form::label('', Lang::get('project.project')) }}</dt>
+        <dd><p>{{ HTML::link(URL::route('get-project',array('id' => $data["project"]["id"])), $data["project"]["name"]) }}</p></dd>
         <dt>{{ Form::label('', Lang::get('general.created_at')) }}</dt>
         <dd><p title="{{date('d.m.Y H:i',$data["issue"]["createtime"])}}">{{date('d.m.Y',$data["issue"]["createtime"])}}</p></dd>
         <dt>{{ Form::label('', Lang::get('general.status')) }}</dt>
-        <dd><p>{{$data["issue"]["status_v"]}}</p></dd>
-        <dt>{{ Form::label('', Lang::get('project.components')) }}</dt>
+        <dd><p id="issue_status">{{$data["issue"]["status_v"]}}</p></dd>
+        <dt>{{ Form::label('', Lang::get('issue.components')) }}</dt>
         <dd><p>{{$data["issue"]["component_view"]["content"]}}</p></dd>
-
     </dl>
 </div>
 <div class="col-xs-6">
     <dl class="dl-horizontal">
-        <dt>{{ Form::label('', Lang::get('project.reporter_user')) }}</dt>
+        <dt>{{ Form::label('', Lang::get('issue.assigned_user')) }}</dt>
+        <dd><p>{{ HTML::link(URL::route('profile',array('id'  => $data["users"]["id"])), $data["users"]["username"]) }}</p></dd>
+        <dt>{{ Form::label('', Lang::get('issue.reporter_user')) }}</dt>
         <dd><p>{{ HTML::link(URL::route('profile',array('id'  => $data["reporter"]["id"])), $data["reporter"]["username"]) }}</p></dd>
-
         <dt>{{ Form::label('', Lang::get('issue.type')) }}</dt>
         <dd><p>{{$data["issue"]["type_view"]["content"]}}</p></dd>
         @if(isset($data["issue"]["labels_view"]))
-        <dt>{{ Form::label('', Lang::get('project.labels')) }}</dt>
+        <dt>{{ Form::label('', Lang::get('issue.labels')) }}</dt>
         <dd><p>
-                
                 @foreach ($data["issue"]["labels_view"] as $labels_v)
                 <span class="label label-default">{{$labels_v["content"]}}</span>
                 @endforeach
-                
             </p>
         </dd>
         @endif

@@ -65,7 +65,7 @@
     </select>
 </div>
 <div class="form-group">
-    {{ Form::label('', Lang::get('project.components')) }}
+    {{ Form::label('', Lang::get('issue.components')) }}
     <select class="form-control" name="components">
         <option value="">{{ Lang::get('general.select') }}</option>
         @foreach ($data["components"] as $components)
@@ -78,11 +78,11 @@
     </select>
 </div>
 <div class="form-group">
-    {{ Form::label('', Lang::get('project.labels')) }}
+    {{ Form::label('', Lang::get('issue.labels')) }}
     <div id="labels"></div>
 </div>
 <div class="form-group">
-    {{ Form::label('', Lang::get('project.assigned_user')) }}
+    {{ Form::label('', Lang::get('issue.assigned_user')) }}
     <select class="form-control" name="users">
         <option value="{{Auth::user()->id}}">{{ Auth::user()->name." ".Lang::get('issue.select_myself') }}</option>
         @foreach ($data["users"] as $users)

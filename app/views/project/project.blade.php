@@ -12,12 +12,12 @@
             <table class="table" style="margin-top: 10px">
                 <thead>
                 <tr>
-                    <th>ID</th>
-                    <th>Talep</th>
-                    <th>Kime Atanmış</th>
-                    <th>Bileşenler</th>
-                    <th>Durumu</th>
-                    <th>İşlemler</th>
+                    <th>{{Lang::get('general.id')}}</th>
+                    <th>{{Lang::get('general.issue')}}</th>
+                    <th>{{Lang::get('issue.assigned_user')}}</th>
+                    <th>{{Lang::get('issue.components')}}</th>
+                    <th>{{Lang::get('general.status')}}</th>
+                    <th>{{Lang::get('general.actions')}}</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -47,7 +47,6 @@
                         @if(Auth::user()->id == $issue["creator"])
                         {{ HTML::link(URL::route('edit-issue',array('id' => $issue["id"])), Lang::get('general.edit'), array('class' => 'btn btn-primary btn-xs')) }}
                         @endif
-
                     </td>
                 </tr>
                 @endforeach
@@ -61,22 +60,12 @@
     <div class="tab-pane" id="summary">
         <div class="col-xs-12 col-sm-12 ">
             <dl class="dl-horizontal">
-                <dt>Versiyon</dt>
-                <dd>
-                    1.0
-                </dd>
                 <dt>Toplam Talep</dt>
-                <dd>
-                    <span class="text-danger"><b>{{ $data["issue_count"] }}</b></span>
-                </dd>
+                <dd><span class="text-danger"><b>{{ $data["issue_count"] }}</b></span></dd>
                 <dt>Bitirilen Talepler</dt>
-                <dd>
-                    <span class="text-info"><b>{{ $data["completed_issue_count"] }}</b></span>
-                </dd>
+                <dd><span class="text-info"><b>{{ $data["completed_issue_count"] }}</b></span></dd>
                 <dt>Açıklama</dt>
-                <dd>
-                    {{ $data["project"]["content"] }}
-                </dd>
+                <dd>{{ $data["project"]["content"] }}</dd>
             </dl>
         </div>
     </div>
