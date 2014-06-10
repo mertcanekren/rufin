@@ -1,6 +1,12 @@
 @extends('template.default')
 @section('content')
-
+@if(@$_GET["no_view"] == "1")
+<div class="alert alert-danger">
+    <ul>
+        <li>{{Lang::get('general.no_view_page')}}</li>
+    </ul>
+</div>
+@endif
     <!--
     <div class="col-xs-12 col-sm-6 ">
       <div class="panel panel-info">

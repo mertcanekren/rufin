@@ -21,5 +21,6 @@ return array(
     'created_at'        => 'Oluşturulma Zamanı',
     'status'            => 'Durum',
     'success-edit'      => 'Düzenleme tamamlandı',
-    'actions'           => 'İşlemler'
+    'actions'           => 'İşlemler',
+    'no_view_page'      => 'Bu sayfayı görüntüleme yetkiniz bulunmamaktadır.'
 );

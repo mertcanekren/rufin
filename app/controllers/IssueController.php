@@ -103,80 +103,88 @@ class IssueController extends BaseController {
     }
 
     public function editIssuePage($id){
-        $data["projects"] = ProjectsModel::get()->toArray();
-        $data["components"] = ComponentsModel::all()->toArray();
-        $data["labels"] = LabelsModel::all()->toArray();
-        $data["type"] = IssueTypeModel::all()->toArray();
-        $data["users"] = UserModel::where('username', '!=', "admin")->where('id', '!=', Auth::user()->id)->get()->toArray();
         $data["issue"] = IssueModel::where('id', '=', $id)->first()->toArray();
-        foreach(explode(',',$data["issue"]["labels"]) as $comp){
-            if($comp != ""){
-                $comp_db = LabelsModel::where('id', '=', $comp)->first(array("content"))->toArray();
-                $data["issue"]["labels_view"][] = $comp_db;
+        if(Auth::user()->id == $data["issue"]["creator"]){
+            $data["projects"] = ProjectsModel::get()->toArray();
+            $data["components"] = ComponentsModel::all()->toArray();
+            $data["labels"] = LabelsModel::all()->toArray();
+            $data["type"] = IssueTypeModel::all()->toArray();
+            $data["users"] = UserModel::where('username', '!=', "admin")->where('id', '!=', Auth::user()->id)->get()->toArray();
+            
+            foreach(explode(',',$data["issue"]["labels"]) as $comp){
+                if($comp != ""){
+                    $comp_db = LabelsModel::where('id', '=', $comp)->first(array("content"))->toArray();
+                    $data["issue"]["labels_view"][] = $comp_db;
+                }
             }
+            $data["issue"]["component_view"] = ComponentsModel::where('id', '=', $data["issue"]["components"])->first(array("content"))->toArray();
+            $data["issue"]["type_view"] = IssueTypeModel::where('id', '=', $data["issue"]["type"])->first(array("content"))->toArray();
+            return View::make('issue.edit',compact('data'));
+        }else{
+            return Redirect::route('dashboard',array('no_view' => "1"));
         }
-        $data["issue"]["component_view"] = ComponentsModel::where('id', '=', $data["issue"]["components"])->first(array("content"))->toArray();
-        $data["issue"]["type_view"] = IssueTypeModel::where('id', '=', $data["issue"]["type"])->first(array("content"))->toArray();
-        return View::make('issue.edit',compact('data'));
     }
     
     public function editIssue(){
         $post_data = Input::all();
-        $validator = Validator::make(
-            $post_data,
-            array(
-                'project' => 'required',
-                'title' => 'required',
-                'content' => 'required',
-                'users' => 'required',
-                'type' => 'required',
-                'components' => 'required',
-                
-            ),
-            array(
-                'project.required' =>  Lang::get('project.project')." ".Lang::get('general.required'),
-                'title.required' =>  Lang::get('issue.title')." ".Lang::get('general.required'),
-                'content.required' =>  Lang::get('general.content')." ".Lang::get('general.required'),
-                'users.required' =>  Lang::get('project.assigned_user')." ".Lang::get('general.required'),
-                'type.required' =>  Lang::get('issue.type')." ".Lang::get('general.required'),
-                'components.required' =>  Lang::get('project.components')." ".Lang::get('general.required')
-            )
-        );
-
-        if ($validator->fails()){
-            return Redirect::route('edit-issue',$post_data["rowid"])->withInput()->withErrors($validator->messages());
-        }
-
-        if(isset($post_data["labels"])){
-            $labels = "";
-            foreach($post_data["labels"] as $lab){
-                $db_labels = LabelsModel::where('content', '=', $lab)->get()->toArray();
-                if($db_labels){
-                    $labels .= $db_labels[0]["id"].",";
-                }else{
-                    $insert_labels = LabelsModel::create(array(
-                        'content' => $lab,
-                        'createtime' => time(),
-                        'creator' => Auth::user()->id
-                    ));
-                    $labels .= $insert_labels->id.",";
-                }
+        $data["issue"] = IssueModel::where('id', '=', $post_data["rowid"])->first()->toArray();
+        if(Auth::user()->id == $data["issue"]["creator"]){
+            $post_data = Input::all();
+            $validator = Validator::make(
+                $post_data,
+                array(
+                    'project' => 'required',
+                    'title' => 'required',
+                    'content' => 'required',
+                    'users' => 'required',
+                    'type' => 'required',
+                    'components' => 'required',
+                ),
+                array(
+                    'project.required' =>  Lang::get('project.project')." ".Lang::get('general.required'),
+                    'title.required' =>  Lang::get('issue.title')." ".Lang::get('general.required'),
+                    'content.required' =>  Lang::get('general.content')." ".Lang::get('general.required'),
+                    'users.required' =>  Lang::get('project.assigned_user')." ".Lang::get('general.required'),
+                    'type.required' =>  Lang::get('issue.type')." ".Lang::get('general.required'),
+                    'components.required' =>  Lang::get('project.components')." ".Lang::get('general.required')
+                )
+            );
+    
+            if ($validator->fails()){
+                return Redirect::route('edit-issue',$post_data["rowid"])->withInput()->withErrors($validator->messages());
             }
+    
+            if(isset($post_data["labels"])){
+                $labels = "";
+                foreach($post_data["labels"] as $lab){
+                    $db_labels = LabelsModel::where('content', '=', $lab)->get()->toArray();
+                    if($db_labels){
+                        $labels .= $db_labels[0]["id"].",";
+                    }else{
+                        $insert_labels = LabelsModel::create(array(
+                            'content' => $lab,
+                            'createtime' => time(),
+                            'creator' => Auth::user()->id
+                        ));
+                        $labels .= $insert_labels->id.",";
+                    }
+                }
+            }else{
+                $labels = "";
+            }
+    
+            $issue = IssueModel::find($post_data["rowid"]);
+            $issue->title = $post_data["title"];
+            $issue->content = $post_data["content"];
+            $issue->project_id = $post_data["project"];
+            $issue->users = $post_data["users"];
+            $issue->type = $post_data["type"];
+            $issue->labels =  substr($labels,0,-1);
+            $issue->components = $post_data["components"];
+            $issue->save();
+            return Redirect::route('edit-issue',array('id' =>$post_data["rowid"],'succes' => "1"));
         }else{
-            $labels = "";
+            return Redirect::route('dashboard',array('no_view' => "1"));
         }
-
-        $issue = IssueModel::find($post_data["rowid"]);
-        $issue->title = $post_data["title"];
-        $issue->content = $post_data["content"];
-        $issue->project_id = $post_data["project"];
-        $issue->users = $post_data["users"];
-        $issue->type = $post_data["type"];
-        $issue->labels =  substr($labels,0,-1);
-        $issue->components = $post_data["components"];
-        $issue->save();
-
-        return Redirect::route('edit-issue',array('id' =>$post_data["rowid"],'succes' => "1"));
-
     }
 }
