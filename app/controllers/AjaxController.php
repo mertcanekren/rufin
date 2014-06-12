@@ -7,7 +7,8 @@ class AjaxController extends BaseController {
         $data = ProjectsModel::orderBy('id', 'DESC')->get(array('name','content', 'id'))->take(5);
         return Response::json($data);
     }
-    
+
+    // Taleplerin durumunu güncellemek için oluşturuldu
     public function workIssue(){
         $post_data = Input::all();
         $issue = IssueModel::find($post_data["id"]);

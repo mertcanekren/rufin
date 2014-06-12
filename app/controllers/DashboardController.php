@@ -2,6 +2,7 @@
 
 class DashboardController extends BaseController {
 
+    // Anasayfa bilgilerini oluşturur
 	public function dashboard(){
         $data["issue"] = IssueModel::where('users', '=', Auth::user()->id)->where('status','=','0')->orderBy('id', 'DESC')->get()->take(10)->toArray();
         if($data["issue"]){
