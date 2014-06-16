@@ -55,6 +55,7 @@
             </ul>
           </li>
           @endif
+            <!--
           <li>
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                 <span class="glyphicon glyphicon-wrench"></span>
@@ -67,6 +68,7 @@
                 <li>{{ HTML::link(URL::route('logout'), Lang::get('general.logout')) }}</li>
             </ul>
           </li>
+          -->
            <li data-toggle="tooltip" data-placement="bottom" title="Çıkış"><a href="{{ URL::route('logout') }}"><span class="glyphicon glyphicon-log-out"></span></a></li>
         </ul>
       </div>
