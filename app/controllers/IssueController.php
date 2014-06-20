@@ -95,7 +95,7 @@ class IssueController extends BaseController {
         if($data["issue"]["status"] == "0"){
             $data["issue"]["status_v"] = Lang::get('issue.open');
         }elseif($data["issue"]["status"] == "1"){
-            $data["issue"]["status_v"] = Lang::get('issue.close');
+            $data["issue"]["status_v"] = Lang::get('issue.completed');
         }else{
             $data["issue"]["status_v"] = Lang::get('issue.work');
         }

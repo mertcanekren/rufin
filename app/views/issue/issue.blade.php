@@ -21,8 +21,9 @@
     @if(Auth::user()->id == $data["issue"]["users"])
         @if($data["issue"]["status"] == 0)
             <button type="button" class="btn btn-default" id="issue_work_button" start="0" data-id="{{$data["issue"]["id"]}}">{{Lang::get('issue.start_work')}}</button>
+            <button type="button" class="btn btn-danger" id="close_issue" style="display:none" data-id="{{$data["issue"]["id"]}}">{{Lang::get('issue.close')}}</button>
         @elseif($data["issue"]["status"] == 1)
-            <button type="button" class="btn btn-success" id="issue_work_button">{{Lang::get('issue.completed')}}</button>
+            <button type="button" class="btn btn-success">{{Lang::get('issue.completed')}}</button>
         @else
             <button type="button" class="btn btn-default" id="issue_work_button" start="1" data-id="{{$data["issue"]["id"]}}">{{Lang::get('issue.stop_work')}}</button>
             <button type="button" class="btn btn-danger" id="close_issue" data-id="{{$data["issue"]["id"]}}">{{Lang::get('issue.close')}}</button>

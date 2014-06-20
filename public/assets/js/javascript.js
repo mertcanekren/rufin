@@ -41,7 +41,8 @@ $(function(){
 
     // Talep ekranında çalışma butonu için
     $('#issue_work_button').click(function(){
-        if($(this).attr('start') == 1){
+        var start = $(this).attr('start');
+        if (typeof attr != 'undefined' && $(this).attr('start') == 1) {
             $.ajax({
                 type : "post",
                 url: "/rufin/public/workIssue",
@@ -86,6 +87,9 @@ $(function(){
             },
             success: function(){
                 $('#issue_work_button').html('Tamamlandı');
+                $('#issue_work_button').addClass('btn-success');
+                $('#issue_work_button').removeAttr('start');
+                $('#issue_work_button').removeAttr('data-id');
                 $('#issue_work_button').removeAttr('id');
                 $('#issue_status').html('Tamamlandı');
                 $('#close_issue').hide();
