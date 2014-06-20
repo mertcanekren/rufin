@@ -4,7 +4,7 @@ $(function(){
 	$('[data-toggle=tooltip]').tooltip() 
 
     // Tablar için
-	$('#myTab a').click(function (e) {
+	$('#myTab a').click(function(e){
 	  e.preventDefault()
 	  $(this).tab('show')
 	})
@@ -39,6 +39,7 @@ $(function(){
         }
     });
 
+    // Talep ekranında çalışma butonu için
     $('#issue_work_button').click(function(){
         if($(this).attr('start') == 1){
             $.ajax({
@@ -52,24 +53,44 @@ $(function(){
                     $('#issue_work_button').html('Çalışmayı Başlat');
                     $('#issue_work_button').attr('start',0);
                     $('#issue_status').html('Açık');
+                    $('#close_issue').hide();
                 }
             })
-            
         }else{
             $.ajax({
                 type : "post",
                 url: "/rufin/public/workIssue",
                 data:{
                     id: $(this).data('id'),
-                    status : 3
+                    status : 2
                 },
                 success: function(){
                     $('#issue_work_button').html('Çalışmayı Durdur');
                     $('#issue_work_button').attr('start',1);
                     $('#issue_status').html('İşlem Yapılıyor');
+                    $('#close_issue').show();
                 }
             })
             
         }
+    });
+    
+    // Talep kapatma
+    $('#close_issue').click(function(){
+        $.ajax({
+            type : "post",
+            url: "/rufin/public/workIssue",
+            data:{
+                id: $(this).data('id'),
+                status : 1
+            },
+            success: function(){
+                $('#issue_work_button').html('Tamamlandı');
+                $('#issue_work_button').removeAttr('id');
+                $('#issue_status').html('Tamamlandı');
+                $('#close_issue').hide();
+            }
+        })
+        
     });
 });

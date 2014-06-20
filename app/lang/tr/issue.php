@@ -15,6 +15,7 @@ return array(
     'start_work'        => 'Çalışmayı Başlat',
     'stop_work'         => 'Çalışmayı Durdur',
     'completed'         => 'Tamamlandı',
+    'close'             => 'Talebi Kapat',
 	'components'        => 'Bileşen',
 	'assigned_user'     => 'Atanan Kullanıcı',
 	'reporter_user'     => 'Atayan Kullanıcı'
