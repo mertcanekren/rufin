@@ -55,20 +55,18 @@
             </ul>
           </li>
           @endif
-            <!--
+            
           <li>
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                 <span class="glyphicon glyphicon-wrench"></span>
                 <b class="caret"></b>
             </a>
             <ul class="dropdown-menu">
-              <li><a href="#">{{Lang::get('general.settings')}}</a></li>
-              <li class="divider"></li>
-              <li class="dropdown-header">Kullanıcı</li>
-                <li>{{ HTML::link(URL::route('logout'), Lang::get('general.logout')) }}</li>
+                <li>{{ HTML::link(URL::route('settings'), Lang::get('general.settings')) }}</li>
+                <!--<li class="divider"></li>-->
             </ul>
           </li>
-          -->
+          
            <li data-toggle="tooltip" data-placement="bottom" title="Çıkış"><a href="{{ URL::route('logout') }}"><span class="glyphicon glyphicon-log-out"></span></a></li>
         </ul>
       </div>

@@ -42,3 +42,8 @@ Route::get('/profile/{id}', array('uses' => 'UserController@profile', 'as' => 'p
 Route::get('/getProjectsList', array('uses' => 'AjaxController@getProjectsList', 'as' => 'get-projectslist', 'before' => 'auth'));
 Route::post('/workIssue', array('uses' => 'AjaxController@workIssue', 'as' => 'work-issue', 'before' => 'auth'));
 /* Ajax*/
+
+/* Kullanıcı */
+Route::get('/settings', array('uses' => 'SettingsController@index', 'as' => 'settings'));
+
+/* Kullanıcı */
