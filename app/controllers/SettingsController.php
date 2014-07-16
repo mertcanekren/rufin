@@ -6,5 +6,8 @@ class SettingsController extends BaseController {
 		return View::make('settings.index');
 	}
 
+	public function general(){
+		return View::make('settings.index');
+	}
 	
 }

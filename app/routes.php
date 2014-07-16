@@ -45,5 +45,6 @@ Route::post('/workIssue', array('uses' => 'AjaxController@workIssue', 'as' => 'w
 
 /* Kullanıcı */
 Route::get('/settings', array('uses' => 'SettingsController@index', 'as' => 'settings'));
+Route::get('/settings/general', array('uses' => 'SettingsController@index', 'as' => 'settings-general'));
 
 /* Kullanıcı */
