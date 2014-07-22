@@ -95,6 +95,5 @@ $(function(){
                 $('#close_issue').hide();
             }
         })
-        
     });
 });

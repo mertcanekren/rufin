@@ -30,7 +30,6 @@ Route::get('/project/{id}/edit', array('uses' => 'ProjectController@editProjectP
 Route::post('/edit-project', array('uses' => 'ProjectController@editProject', 'as' => 'editing-project', 'before' => 'auth'));
 /* Proje */
 
-
 /* Kullanıcı */
 Route::get('/login', array('uses' => 'UserController@login', 'as' => 'login'));
 Route::post('/signin', array('uses' => 'UserController@signIn', 'as' => 'signin'));
@@ -43,8 +42,8 @@ Route::get('/getProjectsList', array('uses' => 'AjaxController@getProjectsList',
 Route::post('/workIssue', array('uses' => 'AjaxController@workIssue', 'as' => 'work-issue', 'before' => 'auth'));
 /* Ajax*/
 
-/* Kullanıcı */
+/* Ayarlar */
 Route::get('/settings', array('uses' => 'SettingsController@index', 'as' => 'settings'));
 Route::get('/settings/general', array('uses' => 'SettingsController@index', 'as' => 'settings-general'));
-
-/* Kullanıcı */
+Route::get('/settings/users/list', array('uses' => 'SettingsController@ListUser', 'as' => 'settings-users-list'));
+/* Ayarlar */
