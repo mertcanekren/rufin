@@ -21,8 +21,7 @@ class IssueController extends BaseController {
                 'content' => 'required',
                 'users' => 'required',
                 'type' => 'required',
-                'components' => 'required',
-                
+                'components' => 'required'
             ),
             array(
                 'project.required' =>  Lang::get('project.project')." ".Lang::get('general.required'),
@@ -30,7 +29,7 @@ class IssueController extends BaseController {
                 'content.required' =>  Lang::get('general.content')." ".Lang::get('general.required'),
                 'users.required' =>  Lang::get('project.assigned_user')." ".Lang::get('general.required'),
                 'type.required' =>  Lang::get('issue.type')." ".Lang::get('general.required'),
-                'components.required' =>  Lang::get('project.components')." ".Lang::get('general.required')
+                'components.required' =>  Lang::get('issue.components')." ".Lang::get('general.required')
             )
         );
 

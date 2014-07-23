@@ -6,12 +6,18 @@ class SettingsController extends BaseController {
 		return View::make('settings.index');
 	}
 
-	public function general(){
-		return View::make('settings.index');
-	}
-	
 	public function ListUser(){
 	    $data = UserModel::get()->toArray();
-		return View::make('settings.users-list',compact('data'));
+		return View::make('settings.users.list',compact('data'));
+	}
+	
+	public function EditUser(){
+	    $data = UserModel::get()->toArray();
+		return View::make('settings.users.list',compact('data'));
+	}
+	
+	public function DeleteUser(){
+	    $data = UserModel::get()->toArray();
+		return View::make('settings.users.list',compact('data'));
 	}
 }

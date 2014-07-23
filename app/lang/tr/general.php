@@ -8,6 +8,7 @@ return array(
 	'cancel'            => 'İptal',
 	'reset'             => 'Temizle',
     'edit'              => 'Düzenle',
+    'delete'            => 'Sil',
 	'settings'          => 'Ayarlar',
 	'required'          => 'doldurulmalıdır.',
 	'issue'             => 'Talep',
