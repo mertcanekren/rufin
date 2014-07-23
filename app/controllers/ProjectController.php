@@ -47,7 +47,7 @@ class ProjectController extends BaseController {
             $isue_count = 0;
             foreach($data["issue"] as $issue){
                 $data["issue"][$isue_count]["users"] = UserModel::where('id' , '=' , $issue["users"])->first(array("username","id"))->toArray();
-                if($issue["status"] == 2){
+                if($issue["status"] == 1){
                     $data["completed_issue_count"] += 1;
                 }
                 if($issue["components"]){
