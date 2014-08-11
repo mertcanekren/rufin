@@ -2,5 +2,7 @@
 
 return array(
     'username' => 'Kullanıcı Adı',
-    'password' => 'Şifre'
+    'password' => 'Şifre',
+    'email' => 'E-mail',
+    'createtime' => 'Kayıt Zamanı'
 );

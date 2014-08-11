@@ -12,10 +12,10 @@
         <thead>
             <tr>
                 <th>#</th>
-                <th>Kullanıcı Adı</th>
-                <th>E-mail</th>
-                <th>Kayıt Zamanı</th>
-                <th width="110">İşlemler</th>
+                <th>{{Lang::get('user.username')}}</th>
+                <th>{{Lang::get('user.email')}}</th>
+                <th>{{Lang::get('user.createtime')}}</th>
+                <th width="110">{{Lang::get('general.actions')}}</th>
             </tr>
         </thead>
         <tbody>
