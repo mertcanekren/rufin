@@ -5,61 +5,42 @@
     $(function(){
         $('.users').addClass('active');
     });
-</script>
+</script> 
 <div class="col-md-8">
     <h4>{{Lang::get('settings.user')." ".Lang::get('settings.list')}}</h4>
-    <form role="form">
+    {{ Form::open(array('route' => 'add-issue', 'method' => 'POST')) }}
         <div class="form-group">
-            <label for="exampleInputEmail1">Email address</label>
-            <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
-        </div>
-        <div class="form-group">
-            <label for="exampleInputPassword1">Password</label>
-            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+            {{ Form::label('', Lang::get('user.username')) }}
+            {{ Form::text('username', $data["username"], array('placeholder' => Lang::get('user.username'), 'class' => 'form-control')); }}
         </div>
         
-    <div class="checkbox">
-    <label>
-    <input type="checkbox"> Check me out
-    </label>
-    </div>
-    <button type="submit" class="btn btn-default">Submit</button>
-    </form>
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    <table class="table table-striped table-hover table-bordered">
-        <thead>
-            <tr>
-                <th>#</th>
-                <th>{{Lang::get('user.username')}}</th>
-                <th>{{Lang::get('user.email')}}</th>
-                <th>{{Lang::get('user.createtime')}}</th>
-                <th width="110">{{Lang::get('general.actions')}}</th>
-            </tr>
-        </thead>
-        <tbody>
-        @foreach ($data as $user)
-            <tr>
-                <td>{{$user["id"]}}</td>
-                <td>{{$user["username"]}}</td>
-                <td>{{$user["email"]}}</td>
-                <td>{{date('d.m.Y H:i',$user["createtime"])}}</td>
-                <td>
-                    {{ HTML::link(URL::route('settings-users-edit',array('id' => $user["id"])), Lang::get('general.edit'), array('class' => 'btn btn-primary btn-xs')) }}           
-                    {{ HTML::link(URL::route('settings-users-delete',array('id' => $user["id"])), Lang::get('general.delete'), array('class' => 'btn btn-danger btn-xs')) }}           
-                </td>
-            </tr>
-        @endforeach
-        </tbody>
-    </table>
+        <div class="form-group">
+            {{ Form::label('', Lang::get('user.name')) }}
+            {{ Form::text('name', $data["name"], array('placeholder' => Lang::get('user.name'), 'class' => 'form-control')); }}
+        </div>
+        
+        <div class="form-group">
+            {{ Form::label('', Lang::get('user.email')) }}
+            {{ Form::text('email', $data["email"], array('placeholder' => Lang::get('user.email'), 'class' => 'form-control')); }}
+        </div>
+        
+        <div class="checkbox">
+            @if($data["role"] == "1")
+                {{ Form::checkbox('role', 1, true) }} {{Lang::get('user.admin')}} 
+            @else
+                {{ Form::checkbox('role', 1, false) }} {{Lang::get('user.admin')}} 
+            @endif
+        </div>
+        
+        <div class="checkbox">
+            @if($data["status"] == "1")
+                {{ Form::checkbox('status', 1, true) }} {{Lang::get('user.status')}} 
+            @else
+                {{ Form::checkbox('status', 1, false) }} {{Lang::get('user.status')}} 
+            @endif
+        </div>
+        <button type="submit" class="btn btn-default">{{Lang::get('general.submit')}}</button>
+    {{ Form::close() }}
 </div>
 <div class="clear10"></div>
 @stop

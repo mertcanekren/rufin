@@ -15,8 +15,13 @@ class SettingsController extends BaseController {
 		return View::make('settings.users.list',compact('data'));
 	}
 	
+	public function EditUserPage($id){
+	    $data = UserModel::where('id','=',$id)->first()->toArray();
+		return View::make('settings.users.edit',compact('data'));
+	}
+
 	public function EditUser($id){
-	    $data = UserModel::where('id','=',$id)->get()->toArray();
+	    $data = UserModel::where('id','=',$id)->first()->toArray();
 		return View::make('settings.users.edit',compact('data'));
 	}
 	

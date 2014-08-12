@@ -46,6 +46,7 @@ Route::post('/workIssue', array('uses' => 'AjaxController@workIssue', 'as' => 'w
 Route::get('/settings', array('uses' => 'SettingsController@index', 'as' => 'settings', 'before' => 'auth'));
 Route::get('/settings/general', array('uses' => 'SettingsController@index', 'as' => 'settings-general', 'before' => 'auth'));
 Route::get('/settings/users/list', array('uses' => 'SettingsController@ListUser', 'as' => 'settings-users-list', 'before' => 'auth'));
-Route::get('/settings/users/edit/{id}', array('uses' => 'SettingsController@EditUser', 'as' => 'settings-users-edit', 'before' => 'auth'));
+Route::get('/settings/users/edit/{id}', array('uses' => 'SettingsController@EditUserPage', 'as' => 'settings-users-edit', 'before' => 'auth'));
+Route::post('/settings/users/edit-user', array('uses' => 'SettingsController@EditUser', 'as' => 'settings-users-edit', 'before' => 'auth'));
 Route::get('/settings/users/delete/{id}', array('uses' => 'SettingsController@DeleteUser', 'as' => 'settings-users-delete', 'before' => 'auth'));
 /* Ayarlar */

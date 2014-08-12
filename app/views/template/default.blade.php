@@ -80,6 +80,7 @@
     -->
     @yield('content')
   </div>
+  <div class="clear"></div>
   <div id="footer">
     <div class="container">
       <p class="text-muted">&copy; 2014</p>
